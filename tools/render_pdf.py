@@ -26,7 +26,7 @@ FOOTER_Y = PAGE_H - 28                    # footer baseline
 def hexrgb(h):
     h = h.lstrip('#'); return tuple(int(h[i:i + 2], 16) / 255 for i in (0, 2, 4))
 INK = hexrgb('#111111'); SUB = hexrgb('#666666'); TRANS = hexrgb('#6A6A6A'); LABEL = hexrgb('#A0A0A0')
-RULE = hexrgb('#D0D0D0'); CHORD = hexrgb('#B03A2E'); CHORD_UNCONFIRMED = hexrgb('#A8A8A8'); FOOT = hexrgb('#B0B0B0')
+RULE = hexrgb('#D0D0D0'); CHORD = hexrgb('#B03A2E'); CHORD_UNCONFIRMED = hexrgb('#B03A2E')   # send version: no grey chords; working notes live in songs/UNCERTAIN.md
 
 # ---- type sizes at scale 1.0 ----
 TITLE = 22; SUBTITLE = 10; INFO = 9.5; TAG = 9
@@ -196,6 +196,7 @@ def melody_block(song):
     mel = song.get('melody')
     if not mel or mel.get('status') == 'not_transcribed':   # no empty staff on a sheet that goes to the band
         return 0, lambda page, x, y: None
+    mel = dict(mel); mel['label'] = ''   # send version: no draft note
     h, draw = notation.layout_melody(mel, CONTENT_W, 1.0)
     return h + BLOCK_GAP, lambda page, x, y: draw(page.p, x, y)
 
@@ -209,7 +210,7 @@ def rhythm_box(song):
     if r.get('practice'):
         r['practice_text'] = 'MPA practice: ' + ' '.join('–' if c == '-' else c for c in r['practice'].split()) + ' (PA in place of TAK)'
     conf = r.get('confidence', '')
-    r['confidence_text'] = conf[:1].upper() + conf[1:] + ('.' if conf and not conf.endswith('.') else '')
+    r['confidence_text'] = ''   # send version: confidence stays in UNCERTAIN.md
     h, draw = notation.layout_rhythm(r, CONTENT_W, 1.0)
     legend = ('Frame drum staff: low line DUM (centre of the skin), high line TAK and KA (edge), x = PA, small note in ( ) = touch '
               '(ghost note). Cells as in MPA Academy: thick left line = accent, numbers under the cells restart on every accent.')
@@ -321,11 +322,6 @@ def form_block(song, k):
     while 0 < half < len(bullets) and bullets[half].startswith('    '):
         half += 1                      # never split one bullet across the two columns
     legend = []
-    if any(not c.get('confirmed', True) for s in song['sections'] for l in s['lines'] for c in l['chords']):
-        legend.append('Grey chords are not on the board or not confirmed by the recording: check them by ear.')
-    for n in song.get('notes') or []:
-        if 'Grey chords' not in n:
-            legend.append(n)
     leg = [w for n in legend for w in wrap(n, 'I', size, CONTENT_W)]
     rows = max(half, len(bullets) - half)
     h = (1 + rows) * lh * (1 if bullets else 0) + len(leg) * lh + 8 * k

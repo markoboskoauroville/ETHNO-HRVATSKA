@@ -174,7 +174,7 @@ def layout_melody(mel, width, k=1.0):
 
     def draw(pg, x, y):
         ensure_fonts(pg)
-        lab = f"MELODY  ·  {mel.get('label', '')}"
+        lab = "MELODY"  + (f"  ·  {mel['label']}" if mel.get('label') else '')
         ls = 8 * k
         if text_w(lab, 'S', ls) > width:
             ls = max(ls * 0.62, ls * width / text_w(lab, 'S', ls))
