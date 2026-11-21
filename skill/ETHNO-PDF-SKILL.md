@@ -53,3 +53,7 @@ Repo: github.com/markoboskoauroville/ETHNO-HRVATSKA (local ~/Developer/ETHNO-HRV
 
 - Every correction Marko gives about a song goes into its `.cho`, and a rule goes here.
 - Register changes in ~/Downloads/API/PROJECTS.md (dated). Compiling a Swift app is GitHub Actions only, never on the Mac.
+
+## The Mac app (21.11.2026)
+
+`/Applications/Ethno Song Sheets (Mantra).app` (repo app/, built by GitHub Actions only) does the same workflow natively: song library, editor with chords above syllables, image and recording import, Vision OCR draft, optional Analyse, PDF render in Swift per songs/SCHEMA.md, preview, Reveal in Finder. Test hooks: `--library DIR --render-all OUT` and `--shot FILE [--song NN] [--preview]`.

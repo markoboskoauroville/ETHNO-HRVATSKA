@@ -16,3 +16,4 @@
 - 21.11.2026: Croatian chord names on the boards: H = B, B = Bb, A# written for Bb, lowercase e / a = Em / Am. On the Rosaura board the
   chords are written under the syllable.
 - 21.11.2026: Phone photos carry GPS in EXIF; every image is re-saved without EXIF (after exif_transpose) before it goes into a public repo.
+- 21.11.2026: Swift app: a closure in applicationDidFinishLaunching needs `self.` for method calls; the GitHub run is the only compiler check, so one error per push is normal.

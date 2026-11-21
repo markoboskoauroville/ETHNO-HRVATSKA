@@ -52,3 +52,7 @@ Run: `python3 tools/cho2json.py && python3 tools/check_lyrics.py && python3 tool
 - A Swift Mac app in this repo re-implementing `render_pdf.py` from `songs/SCHEMA.md` (next worker). Compile only via GitHub
   Actions (copy the Mac Swift workflow from MANTRA_MANIFEST/workflows/ as the first commit of the app), updater at start.
 - Marko's ear on `songs/UNCERTAIN.md`; each answer goes into the `.cho`, then regenerate.
+
+## The Mac app (21.11.2026, v1)
+
+`app/*.swift` + `build.sh` + `.github/workflows/build.yml`. Never compile on the Mac: push to main, the run builds and marks release vN Latest; install with `gh release download` + `ditto` + `codesign -s "Mantra Apps"`. Version is `let VERSION = N` in app/App.swift. Library default ~/Documents/ETHNO-HRVATSKA (macOS asks for Documents access on first run; the app shows an amber PERMISSIONS button if refused). Open: rhythm object and melody staff once SCHEMA.md documents them (v2); an icon; the Analyse button is untested here (needs librosa, pretty_midi, demucs).
