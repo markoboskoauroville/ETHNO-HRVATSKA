@@ -72,3 +72,5 @@ Stems of this evening (Demucs, songs 1, 2, 4) were made in a scratch folder and 
 ## The Mac app (21.11.2026, v1)
 
 `app/*.swift` + `build.sh` + `.github/workflows/build.yml`. Never compile on the Mac: push to main, the run builds and marks release vN Latest; install with `gh release download` + `ditto` + `codesign -s "Mantra Apps"`. Version is `let VERSION = N` in app/App.swift. Library default ~/Documents/ETHNO-HRVATSKA (macOS asks for Documents access on first run; the app shows an amber PERMISSIONS button if refused). Open: rhythm object and melody staff once SCHEMA.md documents them (v2); an icon; the Analyse button is untested here (needs librosa, pretty_midi, demucs).
+
+v2 (21.11.2026): `app/Notation.swift` is the Swift port of tools/notation.py (melody + rhythm box); Renderer.swift follows the new render_pdf.py (no tags/footers, balanced packing, 2-column singers, 3-column guitar). Text is measured without kerning to match PyMuPDF. All ten pages compared by eye with the Python PDFs. Editors: RhythmEditor, MelodyEditor in Views.swift. Open: the app has no icon; Analyse still untested.

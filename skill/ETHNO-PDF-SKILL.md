@@ -95,3 +95,5 @@ Repo: github.com/markoboskoauroville/ETHNO-HRVATSKA (local ~/Developer/ETHNO-HRV
 ## The Mac app (21.11.2026)
 
 `/Applications/Ethno Song Sheets (Mantra).app` (repo app/, built by GitHub Actions only) does the same workflow natively: song library, editor with chords above syllables, image and recording import, Vision OCR draft, optional Analyse, PDF render in Swift per songs/SCHEMA.md, preview, Reveal in Finder. Test hooks: `--library DIR --render-all OUT` and `--shot FILE [--song NN] [--preview]`.
+
+App v2 (21.11.2026): also draws the melody staff (page 1) and the frame-drum rhythm box (page 2) per SCHEMA.md sections 5 and 6, no tags or footers, and edits both (rhythm fields, note list).
