@@ -558,7 +558,7 @@ struct RhythmEditor: View {
                     let n = max(v.cell, 1)
                     v.events = .arr(cells.enumerated().map { i, c in
                         .obj(["beat": .num(1 + Double(i) * 4.0 / Double(n)), "value": .str("1/\(n)"), "stroke": .str(c),
-                              "syllable": .str(Notation.syll[c] ?? c), "accent": .str("DTKP".contains(c) && !c.isEmpty ? c : "")])
+                              "syllable": .str(Notation.syll[c] ?? c), "accent": .bool(!c.isEmpty && "DTKP".contains(c))])
                     })
                     r.wrappedValue = v
                 })

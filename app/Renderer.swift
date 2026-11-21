@@ -47,12 +47,13 @@ final class Fonts {
     func line(_ s: String, _ f: Face, _ size: CGFloat, _ color: CGColor = CGColor(gray: 0, alpha: 1)) -> CTLine {
         let fontKey = NSAttributedString.Key(kCTFontAttributeName as String)
         let colorKey = NSAttributedString.Key(kCTForegroundColorAttributeName as String)
+        let kernKey = NSAttributedString.Key(kCTKernAttributeName as String)   // plain advances, like the Python renderer (PyMuPDF text_length)
         let out = NSMutableAttributedString()
         var run = "", runSym = false
         func flush() {
             if run.isEmpty { return }
             let ft = runSym ? font(.sym, size * 1.25) : font(f, size)
-            out.append(NSAttributedString(string: run, attributes: [fontKey: ft, colorKey: color]))
+            out.append(NSAttributedString(string: run, attributes: [fontKey: ft, colorKey: color, kernKey: NSNumber(value: 0)]))
             run = ""
         }
         for ch in s {
