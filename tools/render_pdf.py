@@ -194,9 +194,12 @@ def singers_blocks_stacked(song, k, colw):
 
 def melody_block(song):
     mel = song.get('melody')
-    if not mel or mel.get('status') == 'not_transcribed':   # no empty staff on a sheet that goes to the band
+    if not mel:
         return 0, lambda page, x, y: None
     mel = dict(mel); mel['label'] = ''   # send version: no draft note
+    # Marko 21.11.2026: staff stays EMPTY where the melody is not known (none/low confidence); he writes it in
+    if mel.get('status') == 'not_transcribed' or str(mel.get('confidence', '')).startswith(('low', 'none')):
+        mel['systems'] = []
     h, draw = notation.layout_melody(mel, CONTENT_W, 1.0)
     return h + BLOCK_GAP, lambda page, x, y: draw(page.p, x, y)
 
