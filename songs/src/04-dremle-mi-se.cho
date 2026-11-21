@@ -1,0 +1,89 @@
+{number: 04}
+{slug: dremle-mi-se}
+{title: Dremle mi se}
+{subtitle: Traditional (Međimurje?) · Etno orkestar 21-10}
+{language: Croatian}
+{key: D minor (D Dorian: B natural)}
+{tempo: ~136 BPM (approx.)}
+{rhythm: "123 ja ostajem" (Marko's note)}
+{confidence: medium-high}
+{chord_source: board}
+{audio: 04Dremle mi se Etno orkestar 21-10.m4a}
+{image: 04 Dremle mi se flipcharts.jpg}
+{play: Special instrumental + solos || | Dm | G | Dm | G | Dm | G | Bb | C |}
+{arr: Soundscape: night sounds.}
+{arr: A: voice + dvojnice (double flute) solo + drone (bordun) + percussion.}
+{arr: A1 B1: tutti melody, singing + chords.}
+{arr: A2 B2: the same + instruments play the melody.}
+{arr: A3 B3: two-part singing (dvoglasje)!}
+{arr: Ai Bi: instrumental! (Ai without percussion).}
+{arr: Special instrumental + solos: | Dm | G | Dm | G | Dm | G | Bb | C |}
+{arr: A4 B4: 'Dremle mi se mila majko' a cappella, dirty (prljavo).}
+{arr: A5 B5: everyone, everything, really gritty (svi sve, al ono baš grr).}
+{arr: Outro: loop 'i zagrljena i poljubljena', fade out -> intro: voice + dvojnice + night soundscape.}
+{note: A = the first four lines of each stanza, B = the last four. Board writes C/Am: C on the word, Am right after (heard on the recording).}
+{note: Board writes B for Bb in the special instrumental (Croatian).}
+{evidence: Board photo '04 Dremle mi se flipcharts.jpeg': chords on stanza 1 (DM, G, F, C/AM), the special-instrumental row DM G DM G DM G B C.}
+{evidence: Demucs other+bass chroma, 1.0 s windows, Viterbi over Dm,G,C,Am,F,Bb,A7: a steady Dm-G alternation through all sung parts; line ends C (1 window) then Am (2-6 windows) at 3:58, 4:18, 4:40, 8:14, 8:26, 8:39: C/Am = C then Am.}
+{evidence: 5:19-5:42: | Dm G | Bb C | repeating, the special instrumental as written.}
+{evidence: basic-pitch MIDI: D 1.00, A 0.46, C 0.31, B 0.31, F 0.27, E 0.21, G 0.16, Bb 0.02: D Dorian (B natural from the G chord); Bb only in the special instrumental.}
+{evidence: DaVinci Resolve Voice Isolation render of the vocal (21.11.2026) used for vocal-activity windows.}
+{uncertain: 'kano kraj mulca': mulac is not a common word; read as 'mule' (rhyme with vujca), marked (?) in the translation. Needs a speaker of the dialect.}
+{uncertain: 'A šta ću ti ja?' is idiomatic: 'And what can I do about it?' / 'What good is that to me?'.}
+{uncertain: The old PDF of 19.11.2026 had the words of a different song ('Dremle mi se, dremle, na krovu golobek'); replaced with Pjesme tekstovi.pdf.}
+{uncertain: Meter not measured reliably; the beat tracker reports ~136 BPM.}
+
+{section: 1}
+[Dm]Dremle mi [G]se, mi[Dm]la maj[G]ko, || I'm so sleepy, dear mother,
+[Dm]spavala bi [C]ja. [Am] || I would like to sleep.
+[Dm]Legni, [G]kćeri, [Dm]pokraj [G]vujca. || Lie down, daughter, beside your uncle.
+[Dm]A šta [F]ću ti [C]ja? [Am] || And what can I do?
+
+[Dm]Legla kraj [G]vujca [Dm]kano [G]kraj mulca, || I lay beside my uncle as if beside a mule (?),
+[Dm]zima je [C]meni. [Am] || I am cold.
+[Dm]Nit [G]zagrljena, [Dm]nit polju[G]bljena, || Neither embraced nor kissed,
+[Dm]zima [F]je [C]meni. [Am] || I am cold.
+
+{section: 2}
+[Dm]Dremle mi [G]se, mi[Dm]la maj[G]ko, || I'm so sleepy, dear mother,
+[Dm]spavala bi [C]ja. [Am] || I would like to sleep.
+[Dm]Legni, [G]kćeri, [Dm]pokraj [G]oca. || Lie down, daughter, beside your father.
+[Dm]A šta [F]ću ti [C]ja? [Am] || And what can I do?
+
+[Dm]Legla kraj [G]oca [Dm]kano [G]kraj koca, || I lay beside my father as if beside a rough blanket,
+[Dm]zima je [C]meni. [Am] || I am cold.
+[Dm]Nit [G]zagrljena, [Dm]nit polju[G]bljena, || Neither embraced nor kissed,
+[Dm]zima [F]je [C]meni. [Am] || I am cold.
+
+{section: 3}
+[Dm]Dremle mi [G]se, mi[Dm]la maj[G]ko, || I'm so sleepy, dear mother,
+[Dm]spavala bi [C]ja. [Am] || I would like to sleep.
+[Dm]Legni, [G]kćeri, [Dm]pokraj [G]mame. || Lie down, daughter, beside your mother.
+[Dm]A šta [F]ću ti [C]ja? [Am] || And what can I do?
+
+[Dm]Legla kraj [G]mame [Dm]kano [G]kraj slame, || I lay beside my mother as if beside straw,
+[Dm]zima je [C]meni. [Am] || I am cold.
+[Dm]Nit [G]zagrljena, [Dm]nit polju[G]bljena, || Neither embraced nor kissed,
+[Dm]zima [F]je [C]meni. [Am] || I am cold.
+
+{section: 4}
+[Dm]Dremle mi [G]se, mi[Dm]la maj[G]ko, || I'm so sleepy, dear mother,
+[Dm]spavala bi [C]ja. [Am] || I would like to sleep.
+[Dm]Legni, [G]kćeri, [Dm]pokraj [G]brata. || Lie down, daughter, beside your brother.
+[Dm]A šta [F]ću ti [C]ja? [Am] || And what can I do?
+
+[Dm]Legla kraj [G]brata [Dm]kano [G]kraj blata, || I lay beside my brother as if beside mud,
+[Dm]zima je [C]meni. [Am] || I am cold.
+[Dm]Nit [G]zagrljena, [Dm]nit polju[G]bljena, || Neither embraced nor kissed,
+[Dm]zima [F]je [C]meni. [Am] || I am cold.
+
+{section: 5}
+[Dm]Dremle mi [G]se, mi[Dm]la maj[G]ko, || I'm so sleepy, dear mother,
+[Dm]spavala bi [C]ja. [Am] || I would like to sleep.
+[Dm]Legni, [G]kćeri, [Dm]pokraj [G]draga. || Lie down, daughter, beside your sweetheart.
+[Dm]A šta [F]ću ti [C]ja? [Am] || And what can I do?
+
+[Dm]Legla kraj [G]draga [Dm]kano [G]kraj blaga, || I lay beside my sweetheart as if beside a treasure,
+[Dm]vruće je [C]meni. [Am] || I am hot.
+[Dm]I [G]zagrljena [Dm]i polju[G]bljena, || Both embraced and kissed,
+[Dm]vruće [F]je [C]meni. [Am] || I am hot.

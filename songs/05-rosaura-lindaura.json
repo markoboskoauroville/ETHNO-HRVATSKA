@@ -1,0 +1,273 @@
+{
+  "schema": "ethno-song/1",
+  "number": "05",
+  "slug": "rosaura-lindaura",
+  "title": "Rosaura Lindaura",
+  "subtitle": "Andean huayno (Peru) · Etno orkestar",
+  "language": "Spanish (Andean)",
+  "key": "A minor",
+  "tempo": "~112 BPM",
+  "rhythm": "Huayno, 2/4",
+  "confidence": "high for intro and A, medium for B and C",
+  "chord_source": "board",
+  "play": [
+    {
+      "label": "Intro",
+      "chords": "|: G7 | C | E7 | Am :| ×2, then | E7 | Am | ×2"
+    }
+  ],
+  "sections": [
+    {
+      "name": "A",
+      "lines": [
+        {
+          "text": "Mañana me voy a Lima, Rosaura,",
+          "translation": "Tomorrow I'm going to Lima, Rosaura,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 27,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "¿qué color quieres tu manta, Lindaura?",
+          "translation": "what colour do you want your shawl, Lindaura?",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 29,
+              "chord": "Em7",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 35,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Celeste como el cielo, Rosaura,",
+          "translation": "Sky-blue like the sky, Rosaura,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 28,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "verde como la esperanza, Lindaura.",
+          "translation": "green like hope, Lindaura.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 25,
+              "chord": "Em7",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 31,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "B (×2, kao A)",
+      "lines": [
+        {
+          "text": "Siempre me da la platita, Rosaura,",
+          "translation": "She always gives me a little money, Rosaura,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "F",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 31,
+              "chord": "C",
+              "source": "audio",
+              "confirmed": false
+            }
+          ]
+        },
+        {
+          "text": "para traer las cositas, Lindaura.",
+          "translation": "to bring back the little things, Lindaura.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "F",
+              "source": "audio",
+              "confirmed": false
+            },
+            {
+              "at_char": 24,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 30,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Mas cuando llego a la Lima, Rosaura,",
+          "translation": "But when I get to Lima, Rosaura,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 33,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "qué rica borracherita, Lindaura.",
+          "translation": "what a lovely little binge, Lindaura!",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 23,
+              "chord": "E7",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 29,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C (×2)",
+      "lines": [
+        {
+          "text": "Cómo no te he de querer, cholita,",
+          "translation": "How could I not love you, cholita,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "cómo no te he de amar, negrita,",
+          "translation": "how could I not adore you, my dark one,",
+          "repeat": null,
+          "chords": []
+        },
+        {
+          "text": "al verte tan buenamoza, chura,",
+          "translation": "seeing you so lovely, my pretty one,",
+          "repeat": null,
+          "chords": []
+        },
+        {
+          "text": "de cara tan regular.",
+          "translation": "with such a fine face.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 8,
+              "chord": "E7",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 16,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "arrangement": [
+    "Intro: |: G7 C E7 Am :| x2, then E7 Am x2.",
+    "A: vocals + percussion + rhythm guitar.",
+    "B: + guitar solo / fills.",
+    "A: vocals + percussion + rhythm guitar.",
+    "C: vocals + percussion + rhythm guitar + winds, soft melody.",
+    "Instrumental B A C: tutti, no vocals ('ya ya ya!' on C).",
+    "A B A: tutti.",
+    "C: 'ya ya ya' + handclaps + quena, x4."
+  ],
+  "notes": [
+    "Pronunciation from the board: 'llego' = yego, 'borracherita' ch = č. '(he)' in 'te he de' may be swallowed.",
+    "Grey chords are inferred from the recording; check by ear."
+  ],
+  "evidence": [
+    "Board photos '05 Rosaura lindaura lyrics.HEIC' (chords under the words: Am, C, Em7, F, G, E7) and '05 Rosaura Lindaura arr.HEIC' (intro and form).",
+    "Demucs other+bass chroma, 1.07 s windows (2 beats at 112 BPM), Viterbi over Am,C,Em7,G,G7,E7,F,Dm: intro at 0:33-0:41 reads G7 C E7 Am exactly as the board.",
+    "1:00-1:15: F (4 windows) - C - Am - F - Am - C: the B couplet starts on F and turns to C at 'Rosaura' and 'Lindaura' (G not separated, likely one beat).",
+    "1:26-1:52: C held ~14 s, then E7 -> Am (C part 'Cómo no te he de querer'); on the repeat Am - C - E7 - Am.",
+    "Whole-song key estimate C major / A minor; basic-pitch: E 1.00, C 0.97, A 0.59, G 0.47, F 0.15; low notes C, A, G.",
+    "Resolve Voice Isolation stem (19.11.2026) used for vocal activity."
+  ],
+  "uncertain": [
+    "B line 1 'Rosaura' C, and line 2 starting on F, are from the audio, not on the board.",
+    "C part lines 2-3 carry no chord on the board; the audio holds C there (first pass) but Am appears on the repeat.",
+    "The board wrote 'chola', crossed out, then 'chura'; Pjesme tekstovi.pdf says 'chura'."
+  ],
+  "sources": {
+    "lyrics": "Pjesme tekstovi.pdf (21.11.2026)",
+    "images": [
+      "05 Rosaura lindaura lyrics.jpg",
+      "05 Rosaura Lindaura arr.jpg"
+    ],
+    "audio": "05 Rosaura Lindaura.m4a"
+  }
+}

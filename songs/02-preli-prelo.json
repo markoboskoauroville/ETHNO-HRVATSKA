@@ -1,0 +1,380 @@
+{
+  "schema": "ethno-song/1",
+  "number": "02",
+  "slug": "preli-prelo",
+  "title": "Preli prelo",
+  "subtitle": "Traditional · Etno orkestar arr. 30-09-26",
+  "language": "Croatian / Bosnian (Štokavian, ikavian-ekavian)",
+  "key": "E minor",
+  "tempo": "~117 BPM",
+  "rhythm": "Malfouf",
+  "confidence": "medium",
+  "chord_source": "board",
+  "play": [
+    {
+      "label": "Intro",
+      "chords": "desert riff on Em + percussion hits"
+    }
+  ],
+  "sections": [
+    {
+      "name": "1",
+      "lines": [
+        {
+          "text": "Preli prelo milo do miloga",
+          "translation": "The spinning-bee went on, darling beside darling,",
+          "repeat": "×2",
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Em",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 6,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 12,
+              "chord": "B",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 22,
+              "chord": "Em",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "moj u vojsci, ja nemam do koga.",
+          "translation": "my love is in the army, I have no one beside me.",
+          "repeat": "×2",
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 14,
+              "chord": "B",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 26,
+              "chord": "Em",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2",
+      "lines": [
+        {
+          "text": "Nemoj mi se sekirati, diko,",
+          "translation": "Don't you fret, my darling,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Em",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 14,
+              "chord": "B",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 22,
+              "chord": "Em",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "što do mene ne voli te niko.",
+          "translation": "that no one but me loves you.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Em",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 7,
+              "chord": "D",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 12,
+              "chord": "B",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 23,
+              "chord": "Em",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3",
+      "lines": [
+        {
+          "text": "Kaži pravo, ti zelena travo,",
+          "translation": "Tell me truly, you green grass,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Em",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 15,
+              "chord": "B",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 22,
+              "chord": "Em",
+              "source": "inferred",
+              "confirmed": false
+            }
+          ]
+        },
+        {
+          "text": "šta je lepše, plavo il' garavo.",
+          "translation": "which is lovelier, fair-haired or dark-haired.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Em",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 7,
+              "chord": "D",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 14,
+              "chord": "B",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 26,
+              "chord": "Em",
+              "source": "inferred",
+              "confirmed": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4",
+      "lines": [
+        {
+          "text": "Igra kolo pred bijelim dvorom,",
+          "translation": "The kolo is danced before the white manor,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Em",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 15,
+              "chord": "B",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 23,
+              "chord": "Em",
+              "source": "inferred",
+              "confirmed": false
+            }
+          ]
+        },
+        {
+          "text": "pred junačkim i pred devojačkim.",
+          "translation": "before the young man's and before the maiden's.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Em",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 7,
+              "chord": "D",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 14,
+              "chord": "B",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 25,
+              "chord": "Em",
+              "source": "inferred",
+              "confirmed": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5",
+      "lines": [
+        {
+          "text": "Oj planiko, slatka vareniko,",
+          "translation": "Oh planika, sweet warm varenika,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Em",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 16,
+              "chord": "B",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 23,
+              "chord": "Em",
+              "source": "inferred",
+              "confirmed": false
+            }
+          ]
+        },
+        {
+          "text": "domaćine, medena rakijo!",
+          "translation": "oh host, oh honey rakija!",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Em",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 4,
+              "chord": "D",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 10,
+              "chord": "B",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 19,
+              "chord": "Em",
+              "source": "inferred",
+              "confirmed": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "6",
+      "lines": [
+        {
+          "text": "Preli prelo…",
+          "translation": "The spinning-bee went on…",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Em",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "arrangement": [
+    "*Turcu turcu, max na max*",
+    "Intro: desert riff (\"kamila\") + teaser of the melody; the riff stays (gives Em) + percussion hits.",
+    "V1: melody only (solo singer) + chord pad. *BAM!*",
+    "V2: + drone (bordun).",
+    "V3: + harmony in thirds (terca).",
+    "Instrumental, 2 verses long, 2x: percussion accelerating + melody teaser. *BAM!*",
+    "V4 + V5: tutti (3 voices + percussion + chords + melody teaser).",
+    "*Drama* pause, no BAM.",
+    "V6: a cappella, 3 voices, accelerating. BAM!"
+  ],
+  "notes": [
+    "Board writes H for B (Croatian). Grey chords are inferred from the marked verse; check by ear.",
+    "Line 1 on the board: 'I e' and 'II a' with arrows to 'Preli' and 'prelo', read as Em then Am. The recording shows Em, B7 and D but no clear Am: check by ear."
+  ],
+  "evidence": [
+    "Board photos 'Preli prelo lyrics.HEIC' and the 30-09-26 jpeg: chords marked on verses 1-2 only (e, a, H, Em, D).",
+    "Demucs other+bass chroma, 1.02 s windows (2 beats at 117.5 BPM), Viterbi over Em,Am,B,B7,D,G,C. Sung part 1:17-1:47: Em with B7 and D turns (1:25 B7-D-Em-D-B7-Em), matching the board's Em / D / H.",
+    "Whole-song key estimate E minor (0.81). basic-pitch: E 1.00, B 0.99, G 0.69, D 0.23, F# 0.20, A 0.17; D# almost absent, so the H chord is short or played as B5/B7.",
+    "Am appeared in only one window (1:46); the board's 'a' at 'Moj' is kept but not confirmed by audio."
+  ],
+  "uncertain": [
+    "'Preli prelo' = the spinning-bee (prelo) went on; nuance of 'milo do miloga' (darling beside darling) is idiomatic.",
+    "'Oj planiko, slatka vareniko': planika (strawberry tree, or a mountain lass) and varenika (warm boiled milk, or mulled rakija) are both possible; translated literally.",
+    "The board repeats Em over 'se' in 'Nemoj mi se'; the repeated chord is left out on the sheet.",
+    "Chords on verses 3-6 copied from the marked verse 2 pattern (same melody), not marked on the board."
+  ],
+  "sources": {
+    "lyrics": "Pjesme tekstovi.pdf (21.11.2026)",
+    "images": [
+      "Preli prelo lyrics.jpg",
+      "Preli prelo arr.jpg",
+      "02 Preli prelo Etno orkestar arr 30-09-26.jpg"
+    ],
+    "audio": "02 Preli prelo Etno orkestar arr 30-09-26.m4a"
+  }
+}

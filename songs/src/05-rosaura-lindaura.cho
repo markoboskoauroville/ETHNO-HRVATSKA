@@ -1,0 +1,51 @@
+{number: 05}
+{slug: rosaura-lindaura}
+{title: Rosaura Lindaura}
+{subtitle: Andean huayno (Peru) · Etno orkestar}
+{language: Spanish (Andean)}
+{key: A minor}
+{tempo: ~112 BPM}
+{rhythm: Huayno, 2/4}
+{confidence: high for intro and A, medium for B and C}
+{chord_source: board}
+{audio: 05 Rosaura Lindaura.m4a}
+{image: 05 Rosaura lindaura lyrics.jpg}
+{image: 05 Rosaura Lindaura arr.jpg}
+{play: Intro || |: G7 | C | E7 | Am :| ×2, then | E7 | Am | ×2}
+{arr: Intro: |: G7 C E7 Am :| x2, then E7 Am x2.}
+{arr: A: vocals + percussion + rhythm guitar.}
+{arr: B: + guitar solo / fills.}
+{arr: A: vocals + percussion + rhythm guitar.}
+{arr: C: vocals + percussion + rhythm guitar + winds, soft melody.}
+{arr: Instrumental B A C: tutti, no vocals ('ya ya ya!' on C).}
+{arr: A B A: tutti.}
+{arr: C: 'ya ya ya' + handclaps + quena, x4.}
+{note: Pronunciation from the board: 'llego' = yego, 'borracherita' ch = č. '(he)' in 'te he de' may be swallowed.}
+{note: Grey chords are inferred from the recording; check by ear.}
+{evidence: Board photos '05 Rosaura lindaura lyrics.HEIC' (chords under the words: Am, C, Em7, F, G, E7) and '05 Rosaura Lindaura arr.HEIC' (intro and form).}
+{evidence: Demucs other+bass chroma, 1.07 s windows (2 beats at 112 BPM), Viterbi over Am,C,Em7,G,G7,E7,F,Dm: intro at 0:33-0:41 reads G7 C E7 Am exactly as the board.}
+{evidence: 1:00-1:15: F (4 windows) - C - Am - F - Am - C: the B couplet starts on F and turns to C at 'Rosaura' and 'Lindaura' (G not separated, likely one beat).}
+{evidence: 1:26-1:52: C held ~14 s, then E7 -> Am (C part 'Cómo no te he de querer'); on the repeat Am - C - E7 - Am.}
+{evidence: Whole-song key estimate C major / A minor; basic-pitch: E 1.00, C 0.97, A 0.59, G 0.47, F 0.15; low notes C, A, G.}
+{evidence: Resolve Voice Isolation stem (19.11.2026) used for vocal activity.}
+{uncertain: B line 1 'Rosaura' C, and line 2 starting on F, are from the audio, not on the board.}
+{uncertain: C part lines 2-3 carry no chord on the board; the audio holds C there (first pass) but Am appears on the repeat.}
+{uncertain: The board wrote 'chola', crossed out, then 'chura'; Pjesme tekstovi.pdf says 'chura'.}
+
+{section: A}
+[Am]Mañana me voy a Lima, Rosau[C]ra, || Tomorrow I'm going to Lima, Rosaura,
+¿qué color quieres tu manta, [Em7]Lindau[Am]ra? || what colour do you want your shawl, Lindaura?
+[Am]Celeste como el cielo, Rosau[C]ra, || Sky-blue like the sky, Rosaura,
+verde como la esperanza, [Em7]Lindau[Am]ra. || green like hope, Lindaura.
+
+{section: B (×2, kao A)}
+[F]Siempre me da la platita, Rosau[^C]ra, || She always gives me a little money, Rosaura,
+[^F]para traer las cositas, [G]Lindau[C]ra. || to bring back the little things, Lindaura.
+[Am]Mas cuando llego a la Lima, Rosau[C]ra, || But when I get to Lima, Rosaura,
+qué rica borracherita, [E7]Lindau[Am]ra. || what a lovely little binge, Lindaura!
+
+{section: C (×2)}
+[C]Cómo no te he de querer, cholita, || How could I not love you, cholita,
+cómo no te he de amar, negrita, || how could I not adore you, my dark one,
+al verte tan buenamoza, chura, || seeing you so lovely, my pretty one,
+de cara [E7]tan regu[Am]lar. || with such a fine face.

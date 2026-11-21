@@ -1,0 +1,652 @@
+{
+ "song": "05-rosaura-lindaura",
+ "date": "2026-11-21",
+ "method": {
+  "stems": "Demucs htdemucs 4-stem (other, bass, vocals, drums); vocal isolation also rendered in DaVinci Resolve 21 (Voice Isolation 100)",
+  "global": "tools/analysis/analyze.py: librosa beat tracker, CQT chroma of other+bass, Krumhansl key profile",
+  "path": "tools/analysis/restricted.py: chroma per window, template match within the board vocabulary, Viterbi (stay 0.5)",
+  "midi": "basic-pitch 0.4.0 on the other stem -> pitch-class weight (duration x velocity)"
+ },
+ "tempo_bpm": 112.3,
+ "key_candidates": [
+  [
+   0.825,
+   "C major"
+  ],
+  [
+   0.761,
+   "A minor"
+  ],
+  [
+   0.759,
+   "E minor"
+  ],
+  [
+   0.482,
+   "G major"
+  ]
+ ],
+ "pitch_class_profile_chroma": {
+  "C": 0.946,
+  "C#": 0.372,
+  "D": 0.307,
+  "Eb": 0.243,
+  "E": 1.0,
+  "F": 0.43,
+  "F#": 0.352,
+  "G": 0.808,
+  "Ab": 0.377,
+  "A": 0.764,
+  "Bb": 0.285,
+  "B": 0.504
+ },
+ "basic_pitch": {
+  "notes": 2709,
+  "pcp": {
+   "E": 1.0,
+   "C": 0.97,
+   "A": 0.59,
+   "G": 0.47,
+   "F": 0.15,
+   "B": 0.06,
+   "D": 0.06,
+   "Ab": 0.01
+  },
+  "low": {
+   "C": 1.0,
+   "A": 0.74,
+   "G": 0.36,
+   "C#": 0.06
+  }
+ },
+ "restricted": {
+  "vocab": [
+   "Am",
+   "C",
+   "Em7",
+   "G",
+   "G7",
+   "E7",
+   "F",
+   "Dm"
+  ],
+  "window_s": 1.0685,
+  "fit": 0.978,
+  "segments": [
+   {
+    "t": 0.0,
+    "chord": "Am",
+    "n": 2,
+    "vocal": false
+   },
+   {
+    "t": 2.14,
+    "chord": "G7",
+    "n": 3,
+    "vocal": false
+   },
+   {
+    "t": 5.34,
+    "chord": "Am",
+    "n": 2,
+    "vocal": true
+   },
+   {
+    "t": 7.48,
+    "chord": "Em7",
+    "n": 2,
+    "vocal": true
+   },
+   {
+    "t": 9.62,
+    "chord": "Am",
+    "n": 1,
+    "vocal": false
+   },
+   {
+    "t": 10.69,
+    "chord": "G7",
+    "n": 4,
+    "vocal": false
+   },
+   {
+    "t": 14.96,
+    "chord": "C",
+    "n": 1,
+    "vocal": true
+   },
+   {
+    "t": 16.03,
+    "chord": "G7",
+    "n": 12,
+    "vocal": true
+   },
+   {
+    "t": 28.85,
+    "chord": "Am",
+    "n": 1,
+    "vocal": true
+   },
+   {
+    "t": 29.92,
+    "chord": "G7",
+    "n": 5,
+    "vocal": true
+   },
+   {
+    "t": 35.26,
+    "chord": "C",
+    "n": 1,
+    "vocal": true
+   },
+   {
+    "t": 36.33,
+    "chord": "E7",
+    "n": 1,
+    "vocal": false
+   },
+   {
+    "t": 37.4,
+    "chord": "Am",
+    "n": 1,
+    "vocal": false
+   },
+   {
+    "t": 38.47,
+    "chord": "G7",
+    "n": 1,
+    "vocal": false
+   },
+   {
+    "t": 39.53,
+    "chord": "Em7",
+    "n": 2,
+    "vocal": true
+   },
+   {
+    "t": 41.67,
+    "chord": "Am",
+    "n": 7,
+    "vocal": false
+   },
+   {
+    "t": 49.15,
+    "chord": "Em7",
+    "n": 2,
+    "vocal": true
+   },
+   {
+    "t": 51.29,
+    "chord": "Am",
+    "n": 4,
+    "vocal": true
+   },
+   {
+    "t": 55.56,
+    "chord": "C",
+    "n": 3,
+    "vocal": true
+   },
+   {
+    "t": 58.77,
+    "chord": "Am",
+    "n": 7,
+    "vocal": true
+   },
+   {
+    "t": 66.25,
+    "chord": "C",
+    "n": 2,
+    "vocal": true
+   },
+   {
+    "t": 68.38,
+    "chord": "F",
+    "n": 2,
+    "vocal": true
+   },
+   {
+    "t": 70.52,
+    "chord": "Am",
+    "n": 3,
+    "vocal": true
+   },
+   {
+    "t": 73.73,
+    "chord": "C",
+    "n": 2,
+    "vocal": true
+   },
+   {
+    "t": 75.86,
+    "chord": "Am",
+    "n": 2,
+    "vocal": true
+   },
+   {
+    "t": 78.0,
+    "chord": "C",
+    "n": 4,
+    "vocal": true
+   },
+   {
+    "t": 82.27,
+    "chord": "Am",
+    "n": 4,
+    "vocal": false
+   },
+   {
+    "t": 86.55,
+    "chord": "C",
+    "n": 13,
+    "vocal": true
+   },
+   {
+    "t": 100.44,
+    "chord": "Am",
+    "n": 6,
+    "vocal": true
+   },
+   {
+    "t": 106.85,
+    "chord": "C",
+    "n": 5,
+    "vocal": true
+   },
+   {
+    "t": 112.19,
+    "chord": "Am",
+    "n": 2,
+    "vocal": false
+   },
+   {
+    "t": 114.33,
+    "chord": "F",
+    "n": 5,
+    "vocal": false
+   },
+   {
+    "t": 119.67,
+    "chord": "C",
+    "n": 2,
+    "vocal": false
+   },
+   {
+    "t": 121.81,
+    "chord": "F",
+    "n": 3,
+    "vocal": false
+   },
+   {
+    "t": 125.01,
+    "chord": "Am",
+    "n": 2,
+    "vocal": false
+   },
+   {
+    "t": 127.15,
+    "chord": "C",
+    "n": 4,
+    "vocal": false
+   },
+   {
+    "t": 131.43,
+    "chord": "Em7",
+    "n": 1,
+    "vocal": true
+   },
+   {
+    "t": 132.49,
+    "chord": "Am",
+    "n": 1,
+    "vocal": true
+   },
+   {
+    "t": 133.56,
+    "chord": "C",
+    "n": 2,
+    "vocal": true
+   },
+   {
+    "t": 135.7,
+    "chord": "Em7",
+    "n": 1,
+    "vocal": true
+   },
+   {
+    "t": 136.77,
+    "chord": "Am",
+    "n": 5,
+    "vocal": true
+   },
+   {
+    "t": 142.11,
+    "chord": "C",
+    "n": 3,
+    "vocal": true
+   },
+   {
+    "t": 145.32,
+    "chord": "Am",
+    "n": 1,
+    "vocal": true
+   },
+   {
+    "t": 146.38,
+    "chord": "C",
+    "n": 9,
+    "vocal": false
+   },
+   {
+    "t": 156.0,
+    "chord": "Em7",
+    "n": 1,
+    "vocal": false
+   },
+   {
+    "t": 157.07,
+    "chord": "Am",
+    "n": 1,
+    "vocal": false
+   },
+   {
+    "t": 158.14,
+    "chord": "C",
+    "n": 10,
+    "vocal": true
+   },
+   {
+    "t": 168.82,
+    "chord": "Am",
+    "n": 5,
+    "vocal": true
+   },
+   {
+    "t": 174.17,
+    "chord": "C",
+    "n": 2,
+    "vocal": true
+   },
+   {
+    "t": 176.3,
+    "chord": "Em7",
+    "n": 1,
+    "vocal": true
+   },
+   {
+    "t": 177.37,
+    "chord": "Am",
+    "n": 3,
+    "vocal": true
+   },
+   {
+    "t": 180.58,
+    "chord": "C",
+    "n": 5,
+    "vocal": true
+   },
+   {
+    "t": 185.92,
+    "chord": "Am",
+    "n": 1,
+    "vocal": true
+   },
+   {
+    "t": 186.99,
+    "chord": "F",
+    "n": 6,
+    "vocal": false
+   },
+   {
+    "t": 193.4,
+    "chord": "C",
+    "n": 3,
+    "vocal": true
+   },
+   {
+    "t": 196.6,
+    "chord": "F",
+    "n": 5,
+    "vocal": false
+   },
+   {
+    "t": 201.95,
+    "chord": "Em7",
+    "n": 1,
+    "vocal": true
+   },
+   {
+    "t": 203.02,
+    "chord": "C",
+    "n": 2,
+    "vocal": true
+   },
+   {
+    "t": 205.15,
+    "chord": "Am",
+    "n": 2,
+    "vocal": false
+   },
+   {
+    "t": 207.29,
+    "chord": "C",
+    "n": 4,
+    "vocal": true
+   },
+   {
+    "t": 211.56,
+    "chord": "Am",
+    "n": 2,
+    "vocal": true
+   },
+   {
+    "t": 213.7,
+    "chord": "C",
+    "n": 5,
+    "vocal": true
+   },
+   {
+    "t": 219.04,
+    "chord": "Am",
+    "n": 2,
+    "vocal": true
+   },
+   {
+    "t": 221.18,
+    "chord": "C",
+    "n": 1,
+    "vocal": false
+   },
+   {
+    "t": 222.25,
+    "chord": "Am",
+    "n": 5,
+    "vocal": false
+   },
+   {
+    "t": 227.59,
+    "chord": "C",
+    "n": 1,
+    "vocal": false
+   },
+   {
+    "t": 228.66,
+    "chord": "Am",
+    "n": 5,
+    "vocal": false
+   },
+   {
+    "t": 234.0,
+    "chord": "C",
+    "n": 1,
+    "vocal": false
+   },
+   {
+    "t": 235.07,
+    "chord": "Am",
+    "n": 5,
+    "vocal": false
+   },
+   {
+    "t": 240.41,
+    "chord": "C",
+    "n": 2,
+    "vocal": false
+   },
+   {
+    "t": 242.55,
+    "chord": "Am",
+    "n": 4,
+    "vocal": false
+   },
+   {
+    "t": 246.82,
+    "chord": "C",
+    "n": 2,
+    "vocal": false
+   },
+   {
+    "t": 248.96,
+    "chord": "Em7",
+    "n": 1,
+    "vocal": false
+   },
+   {
+    "t": 250.03,
+    "chord": "C",
+    "n": 5,
+    "vocal": false
+   },
+   {
+    "t": 255.37,
+    "chord": "Em7",
+    "n": 1,
+    "vocal": false
+   },
+   {
+    "t": 256.44,
+    "chord": "Dm",
+    "n": 2,
+    "vocal": true
+   },
+   {
+    "t": 258.58,
+    "chord": "Am",
+    "n": 2,
+    "vocal": false
+   },
+   {
+    "t": 260.71,
+    "chord": "C",
+    "n": 1,
+    "vocal": false
+   },
+   {
+    "t": 261.78,
+    "chord": "Am",
+    "n": 5,
+    "vocal": false
+   },
+   {
+    "t": 267.12,
+    "chord": "C",
+    "n": 1,
+    "vocal": false
+   },
+   {
+    "t": 268.19,
+    "chord": "Am",
+    "n": 7,
+    "vocal": false
+   },
+   {
+    "t": 275.67,
+    "chord": "Em7",
+    "n": 1,
+    "vocal": false
+   },
+   {
+    "t": 276.74,
+    "chord": "G7",
+    "n": 3,
+    "vocal": true
+   },
+   {
+    "t": 279.95,
+    "chord": "F",
+    "n": 2,
+    "vocal": false
+   }
+  ]
+ },
+ "vocal_phrases_s": [
+  [
+   0.77,
+   2.09
+  ],
+  [
+   14.65,
+   15.07
+  ],
+  [
+   16.35,
+   16.76
+  ],
+  [
+   25.36,
+   25.98
+  ],
+  [
+   28.35,
+   29.35
+  ],
+  [
+   31.79,
+   32.58
+  ],
+  [
+   45.81,
+   112.94
+  ],
+  [
+   117.96,
+   119.79
+  ],
+  [
+   122.46,
+   123.41
+  ],
+  [
+   134.65,
+   135.16
+  ],
+  [
+   138.72,
+   140.32
+  ],
+  [
+   142.29,
+   143.31
+  ],
+  [
+   145.1,
+   145.8
+  ],
+  [
+   147.17,
+   166.74
+  ],
+  [
+   168.25,
+   168.99
+  ],
+  [
+   171.01,
+   220.38
+  ],
+  [
+   276.67,
+   279.5
+  ]
+ ]
+}

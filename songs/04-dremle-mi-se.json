@@ -1,0 +1,1262 @@
+{
+  "schema": "ethno-song/1",
+  "number": "04",
+  "slug": "dremle-mi-se",
+  "title": "Dremle mi se",
+  "subtitle": "Traditional (Međimurje?) · Etno orkestar 21-10",
+  "language": "Croatian",
+  "key": "D minor (D Dorian: B natural)",
+  "tempo": "~136 BPM (approx.)",
+  "rhythm": "\"123 ja ostajem\" (Marko's note)",
+  "confidence": "medium-high",
+  "chord_source": "board",
+  "play": [
+    {
+      "label": "Special instrumental + solos",
+      "chords": "| Dm | G | Dm | G | Dm | G | Bb | C |"
+    }
+  ],
+  "sections": [
+    {
+      "name": "1",
+      "lines": [
+        {
+          "text": "Dremle mi se, mila majko,",
+          "translation": "I'm so sleepy, dear mother,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 10,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 16,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 22,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "spavala bi ja.",
+          "translation": "I would like to sleep.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 11,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 14,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Legni, kćeri, pokraj vujca.",
+          "translation": "Lie down, daughter, beside your uncle.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 7,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 14,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 21,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "A šta ću ti ja?",
+          "translation": "And what can I do?",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 6,
+              "chord": "F",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 12,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 15,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Legla kraj vujca kano kraj mulca,",
+          "translation": "I lay beside my uncle as if beside a mule (?),",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 11,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 17,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 22,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "zima je meni.",
+          "translation": "I am cold.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 8,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 13,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Nit zagrljena, nit poljubljena,",
+          "translation": "Neither embraced nor kissed,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 4,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 15,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 24,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "zima je meni.",
+          "translation": "I am cold.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 5,
+              "chord": "F",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 8,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 13,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2",
+      "lines": [
+        {
+          "text": "Dremle mi se, mila majko,",
+          "translation": "I'm so sleepy, dear mother,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 10,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 16,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 22,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "spavala bi ja.",
+          "translation": "I would like to sleep.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 11,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 14,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Legni, kćeri, pokraj oca.",
+          "translation": "Lie down, daughter, beside your father.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 7,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 14,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 21,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "A šta ću ti ja?",
+          "translation": "And what can I do?",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 6,
+              "chord": "F",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 12,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 15,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Legla kraj oca kano kraj koca,",
+          "translation": "I lay beside my father as if beside a rough blanket,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 11,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 15,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 20,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "zima je meni.",
+          "translation": "I am cold.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 8,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 13,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Nit zagrljena, nit poljubljena,",
+          "translation": "Neither embraced nor kissed,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 4,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 15,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 24,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "zima je meni.",
+          "translation": "I am cold.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 5,
+              "chord": "F",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 8,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 13,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3",
+      "lines": [
+        {
+          "text": "Dremle mi se, mila majko,",
+          "translation": "I'm so sleepy, dear mother,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 10,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 16,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 22,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "spavala bi ja.",
+          "translation": "I would like to sleep.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 11,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 14,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Legni, kćeri, pokraj mame.",
+          "translation": "Lie down, daughter, beside your mother.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 7,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 14,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 21,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "A šta ću ti ja?",
+          "translation": "And what can I do?",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 6,
+              "chord": "F",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 12,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 15,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Legla kraj mame kano kraj slame,",
+          "translation": "I lay beside my mother as if beside straw,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 11,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 16,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 21,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "zima je meni.",
+          "translation": "I am cold.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 8,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 13,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Nit zagrljena, nit poljubljena,",
+          "translation": "Neither embraced nor kissed,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 4,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 15,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 24,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "zima je meni.",
+          "translation": "I am cold.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 5,
+              "chord": "F",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 8,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 13,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4",
+      "lines": [
+        {
+          "text": "Dremle mi se, mila majko,",
+          "translation": "I'm so sleepy, dear mother,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 10,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 16,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 22,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "spavala bi ja.",
+          "translation": "I would like to sleep.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 11,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 14,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Legni, kćeri, pokraj brata.",
+          "translation": "Lie down, daughter, beside your brother.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 7,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 14,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 21,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "A šta ću ti ja?",
+          "translation": "And what can I do?",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 6,
+              "chord": "F",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 12,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 15,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Legla kraj brata kano kraj blata,",
+          "translation": "I lay beside my brother as if beside mud,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 11,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 17,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 22,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "zima je meni.",
+          "translation": "I am cold.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 8,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 13,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Nit zagrljena, nit poljubljena,",
+          "translation": "Neither embraced nor kissed,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 4,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 15,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 24,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "zima je meni.",
+          "translation": "I am cold.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 5,
+              "chord": "F",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 8,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 13,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5",
+      "lines": [
+        {
+          "text": "Dremle mi se, mila majko,",
+          "translation": "I'm so sleepy, dear mother,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 10,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 16,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 22,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "spavala bi ja.",
+          "translation": "I would like to sleep.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 11,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 14,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Legni, kćeri, pokraj draga.",
+          "translation": "Lie down, daughter, beside your sweetheart.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 7,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 14,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 21,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "A šta ću ti ja?",
+          "translation": "And what can I do?",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 6,
+              "chord": "F",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 12,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 15,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "Legla kraj draga kano kraj blaga,",
+          "translation": "I lay beside my sweetheart as if beside a treasure,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 11,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 17,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 22,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "vruće je meni.",
+          "translation": "I am hot.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 9,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 14,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "I zagrljena i poljubljena,",
+          "translation": "Both embraced and kissed,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 2,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 12,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 19,
+              "chord": "G",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "vruće je meni.",
+          "translation": "I am hot.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 6,
+              "chord": "F",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 9,
+              "chord": "C",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 14,
+              "chord": "Am",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "arrangement": [
+    "Soundscape: night sounds.",
+    "A: voice + dvojnice (double flute) solo + drone (bordun) + percussion.",
+    "A1 B1: tutti melody, singing + chords.",
+    "A2 B2: the same + instruments play the melody.",
+    "A3 B3: two-part singing (dvoglasje)!",
+    "Ai Bi: instrumental! (Ai without percussion).",
+    "Special instrumental + solos: | Dm | G | Dm | G | Dm | G | Bb | C |",
+    "A4 B4: 'Dremle mi se mila majko' a cappella, dirty (prljavo).",
+    "A5 B5: everyone, everything, really gritty (svi sve, al ono baš grr).",
+    "Outro: loop 'i zagrljena i poljubljena', fade out -> intro: voice + dvojnice + night soundscape."
+  ],
+  "notes": [
+    "A = the first four lines of each stanza, B = the last four. Board writes C/Am: C on the word, Am right after (heard on the recording).",
+    "Board writes B for Bb in the special instrumental (Croatian)."
+  ],
+  "evidence": [
+    "Board photo '04 Dremle mi se flipcharts.jpeg': chords on stanza 1 (DM, G, F, C/AM), the special-instrumental row DM G DM G DM G B C.",
+    "Demucs other+bass chroma, 1.0 s windows, Viterbi over Dm,G,C,Am,F,Bb,A7: a steady Dm-G alternation through all sung parts; line ends C (1 window) then Am (2-6 windows) at 3:58, 4:18, 4:40, 8:14, 8:26, 8:39: C/Am = C then Am.",
+    "5:19-5:42: | Dm G | Bb C | repeating, the special instrumental as written.",
+    "basic-pitch MIDI: D 1.00, A 0.46, C 0.31, B 0.31, F 0.27, E 0.21, G 0.16, Bb 0.02: D Dorian (B natural from the G chord); Bb only in the special instrumental.",
+    "DaVinci Resolve Voice Isolation render of the vocal (21.11.2026) used for vocal-activity windows."
+  ],
+  "uncertain": [
+    "'kano kraj mulca': mulac is not a common word; read as 'mule' (rhyme with vujca), marked (?) in the translation. Needs a speaker of the dialect.",
+    "'A šta ću ti ja?' is idiomatic: 'And what can I do about it?' / 'What good is that to me?'.",
+    "The old PDF of 19.11.2026 had the words of a different song ('Dremle mi se, dremle, na krovu golobek'); replaced with Pjesme tekstovi.pdf.",
+    "Meter not measured reliably; the beat tracker reports ~136 BPM."
+  ],
+  "sources": {
+    "lyrics": "Pjesme tekstovi.pdf (21.11.2026)",
+    "images": [
+      "04 Dremle mi se flipcharts.jpg"
+    ],
+    "audio": "04Dremle mi se Etno orkestar 21-10.m4a"
+  }
+}

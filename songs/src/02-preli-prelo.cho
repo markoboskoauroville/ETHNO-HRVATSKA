@@ -1,0 +1,57 @@
+{number: 02}
+{slug: preli-prelo}
+{title: Preli prelo}
+{subtitle: Traditional · Etno orkestar arr. 30-09-26}
+{language: Croatian / Bosnian (Štokavian, ikavian-ekavian)}
+{key: E minor}
+{tempo: ~117 BPM}
+{rhythm: Malfouf}
+{confidence: medium}
+{chord_source: board}
+{audio: 02 Preli prelo Etno orkestar arr 30-09-26.m4a}
+{image: Preli prelo lyrics.jpg}
+{image: Preli prelo arr.jpg}
+{image: 02 Preli prelo Etno orkestar arr 30-09-26.jpg}
+{play: Intro || desert riff on Em + percussion hits}
+{arr: *Turcu turcu, max na max*}
+{arr: Intro: desert riff ("kamila") + teaser of the melody; the riff stays (gives Em) + percussion hits.}
+{arr: V1: melody only (solo singer) + chord pad. *BAM!*}
+{arr: V2: + drone (bordun).}
+{arr: V3: + harmony in thirds (terca).}
+{arr: Instrumental, 2 verses long, 2x: percussion accelerating + melody teaser. *BAM!*}
+{arr: V4 + V5: tutti (3 voices + percussion + chords + melody teaser).}
+{arr: *Drama* pause, no BAM.}
+{arr: V6: a cappella, 3 voices, accelerating. BAM!}
+{note: Board writes H for B (Croatian). Grey chords are inferred from the marked verse; check by ear.}
+{note: Line 1 on the board: 'I e' and 'II a' with arrows to 'Preli' and 'prelo', read as Em then Am. The recording shows Em, B7 and D but no clear Am: check by ear.}
+{evidence: Board photos 'Preli prelo lyrics.HEIC' and the 30-09-26 jpeg: chords marked on verses 1-2 only (e, a, H, Em, D).}
+{evidence: Demucs other+bass chroma, 1.02 s windows (2 beats at 117.5 BPM), Viterbi over Em,Am,B,B7,D,G,C. Sung part 1:17-1:47: Em with B7 and D turns (1:25 B7-D-Em-D-B7-Em), matching the board's Em / D / H.}
+{evidence: Whole-song key estimate E minor (0.81). basic-pitch: E 1.00, B 0.99, G 0.69, D 0.23, F# 0.20, A 0.17; D# almost absent, so the H chord is short or played as B5/B7.}
+{evidence: Am appeared in only one window (1:46); the board's 'a' at 'Moj' is kept but not confirmed by audio.}
+{uncertain: 'Preli prelo' = the spinning-bee (prelo) went on; nuance of 'milo do miloga' (darling beside darling) is idiomatic.}
+{uncertain: 'Oj planiko, slatka vareniko': planika (strawberry tree, or a mountain lass) and varenika (warm boiled milk, or mulled rakija) are both possible; translated literally.}
+{uncertain: The board repeats Em over 'se' in 'Nemoj mi se'; the repeated chord is left out on the sheet.}
+{uncertain: Chords on verses 3-6 copied from the marked verse 2 pattern (same melody), not marked on the board.}
+
+{section: 1}
+[Em]Preli [Am]prelo [B]milo do mi[Em]loga || The spinning-bee went on, darling beside darling, || ×2
+[Am]moj u vojsci, [B]ja nemam do [Em]koga. || my love is in the army, I have no one beside me. || ×2
+
+{section: 2}
+[Em]Nemoj mi se se[B]kirati, [Em]diko, || Don't you fret, my darling,
+[Em]što do [D]mene [B]ne voli te [Em]niko. || that no one but me loves you.
+
+{section: 3}
+[~Em]Kaži pravo, ti [~B]zelena [~Em]travo, || Tell me truly, you green grass,
+[~Em]šta je [~D]lepše, [~B]plavo il' ga[~Em]ravo. || which is lovelier, fair-haired or dark-haired.
+
+{section: 4}
+[~Em]Igra kolo pred [~B]bijelim [~Em]dvorom, || The kolo is danced before the white manor,
+[~Em]pred ju[~D]načkim [~B]i pred devo[~Em]jačkim. || before the young man's and before the maiden's.
+
+{section: 5}
+[~Em]Oj planiko, slat[~B]ka vare[~Em]niko, || Oh planika, sweet warm varenika,
+[~Em]doma[~D]ćine, [~B]medena ra[~Em]kijo! || oh host, oh honey rakija!
+
+{section: 6}
+[Em]Preli prelo… || The spinning-bee went on…

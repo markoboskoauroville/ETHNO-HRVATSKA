@@ -1,0 +1,265 @@
+{
+  "schema": "ethno-song/1",
+  "number": "01",
+  "slug": "wein-aa-ramallah",
+  "title": "Wein aa Ramallah",
+  "subtitle": "Palestinian traditional · Etno orkestar arr. 30-09-26",
+  "language": "Palestinian Arabic (Latin transliteration)",
+  "key": "D minor · Maqam Bayati on D",
+  "tempo": "~129 BPM",
+  "rhythm": "Malfouf",
+  "scale": "D  E half-flat  F  G  A  Bb  C  (Bayati: the 2nd step is a quarter-tone, E half-flat; guitar chords avoid E)",
+  "confidence": "low-medium",
+  "chord_source": "audio",
+  "play": [],
+  "sections": [
+    {
+      "name": "1",
+      "lines": [
+        {
+          "text": "Wein aa Ramallah, wein aa Ramallah,",
+          "translation": "Where to? To Ramallah! Where to? To Ramallah!",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "audio",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "wilfee yamsafer wein aa Ramallah,",
+          "translation": "My love, you traveller, where to? To Ramallah!",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "audio",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "matakhaf min allah, matakhaf min allah,",
+          "translation": "Don't you fear God? Don't you fear God?",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Gm",
+              "source": "audio",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "saragat eglaiby matakhaf min allah.",
+          "translation": "You stole my heart, don't you fear God?",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "audio",
+              "confirmed": true
+            },
+            {
+              "at_char": 16,
+              "chord": "A7",
+              "source": "audio",
+              "confirmed": true
+            },
+            {
+              "at_char": 31,
+              "chord": "Dm",
+              "source": "audio",
+              "confirmed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2",
+      "lines": [
+        {
+          "text": "Wein aa Ramallah, wein aa Ramallah,",
+          "translation": "Where to? To Ramallah! Where to? To Ramallah!",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "audio",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "wilfee yamsafer wein aa Ramallah,",
+          "translation": "My love, you traveller, where to? To Ramallah!",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "audio",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "dab galby wallah, dab galby wallah,",
+          "translation": "My heart melted, I swear, my heart melted, I swear,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Gm",
+              "source": "audio",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "yom ill wadaatak dab galby wallah.",
+          "translation": "the day I said goodbye to you, my heart melted, I swear.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "audio",
+              "confirmed": true
+            },
+            {
+              "at_char": 17,
+              "chord": "A7",
+              "source": "audio",
+              "confirmed": true
+            },
+            {
+              "at_char": 30,
+              "chord": "Dm",
+              "source": "audio",
+              "confirmed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3",
+      "lines": [
+        {
+          "text": "Wain ya habibi, wain ya habibi,",
+          "translation": "Where, my love? Where, my love?",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "inferred",
+              "confirmed": false
+            }
+          ]
+        },
+        {
+          "text": "tariknee w raiyeh wain ya habibi,",
+          "translation": "You leave me and go away, where, my love?",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 18,
+              "chord": "A7",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 28,
+              "chord": "Dm",
+              "source": "inferred",
+              "confirmed": false
+            }
+          ]
+        },
+        {
+          "text": "hathi w naseeby, hathi w naseeby,",
+          "translation": "This is my fate, this is my fate,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Gm",
+              "source": "inferred",
+              "confirmed": false
+            }
+          ]
+        },
+        {
+          "text": "raytak min allah hathi w naseeby.",
+          "translation": "I saw you as God's gift, this is my fate.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Dm",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 17,
+              "chord": "A7",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 27,
+              "chord": "Dm",
+              "source": "inferred",
+              "confirmed": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "arrangement": [
+    "Start from silence, count 1 2 3 (heard on the 30-09-26 recording).",
+    "Rhythm malfouf all through (\"TILILILI ... ritam MAFOUF\").",
+    "Zaghrouta cue: TILILILILILI (the women's trill).",
+    "No arrangement flipchart exists for this song; the form follows the three stanzas of the lyric sheet."
+  ],
+  "notes": [
+    "No chord board exists for this song: every chord comes from the recording analysis (low-medium confidence)."
+  ],
+  "evidence": [
+    "Tempo ~129 BPM from the librosa beat tracker on drums+mix; malfouf is a 2/4 feel, so ~65 half-time is the same groove.",
+    "Demucs htdemucs stems (other+bass) -> CQT chroma, 0.93 s windows (2 beats at 129 BPM), Viterbi over Dm,Gm,C,A,A7,Bb,F,Cm,Eb.",
+    "Chroma path: Dm dominates; Gm blocks of ~5 s at 0:58 and 1:36; A7->Dm cadences at 1:05-1:10 and 1:23. Free-vocabulary best chord mostly Dm7/Gm7.",
+    "2:06-2:24: free best E7 / C#m7 (C#, E, G#), an A-major colour; could be an instrumental or the 3rd stanza over A.",
+    "basic-pitch MIDI of the 'other' stem: A 1.00, D 0.63, G 0.46, Bb 0.32, F 0.29, C 0.14, E 0.10; low notes D. Consistent with D minor / Bayati with a D-A drone.",
+    "DaVinci Resolve Voice Isolation render of the vocal (21.11.2026) used for vocal-activity windows."
+  ],
+  "uncertain": [
+    "Title spelled 'Wein a Ramallah' in Pjesme tekstovi.pdf, 'Wein aa Ramallah' in the lines and file names; 'aa' used.",
+    "'raytak min allah' translated 'I saw you as God's gift'; the INFO sheet says 'I loved you for God's sake'. Literal: 'I saw you from God'.",
+    "Chords are audio-only (no chord flipchart). The line-by-line placement is a best fit of the Dm / Gm / A7 pattern heard; stanza 3 may move to A (see evidence)."
+  ],
+  "sources": {
+    "lyrics": "Pjesme tekstovi.pdf (21.11.2026)",
+    "images": [
+      "01 - orig - Wein aa Ramallah INFO.pdf"
+    ],
+    "audio": "01 Wein aa Ramallah Etno orkestar arr 30-09-26.m4a"
+  }
+}

@@ -1,0 +1,58 @@
+{number: 03}
+{slug: da-bi-nasi-starci-znali}
+{title: Da bi naši starci znali}
+{subtitle: Kajkavian traditional · Etno orkestar 21-10}
+{language: Croatian (Kajkavian)}
+{key: G minor}
+{tempo: ~99 BPM}
+{rhythm: 2+3 (5/8)}
+{confidence: medium}
+{chord_source: board}
+{audio: 03 Da bi naši starci znali Etno orkestar 21-10.m4a}
+{image: 03 Da bi nasi starci znali TEKST.jpg}
+{image: 03 Da bi nasi starci znali ARR.jpg}
+{play: Intro, V1, V2 || G drone, then Gm strumming only}
+{arr: Count (Marko's note): 12|123| 12|123| 12|123| then the break and three hits |1 |2 |3.}
+{arr: Intro: sax melody, guitars tremolo chord -> G drone + percussion announcement PAM PAM PAM.}
+{arr: V1: singing + Gm chord (strumming) + percussion. (Guitar stays on Gm.)}
+{arr: V2: the same + winds, military.}
+{arr: Instrumental 1: guitars full chords, melodies, fills.}
+{arr: Instrumental 2: the same + BAGPIPE.}
+{arr: V3 + V4: singing + full chords + 2nd voice + BAGPIPE + V4 melody.}
+{arr: Instrumental x1: percussion breaks + NAJ NAJ NAJ.}
+{arr: Singing LA LA LA + percussion.}
+{note: Board writes A# for Bb. In V1 and V2 the guitar strums Gm only; the full chords below are for Instrumental 1 on and V3-V4.}
+{note: Grey chords are inferred (not on the board); check by ear.}
+{evidence: Tempo ~99 BPM from the librosa beat tracker; with a 2+3 pulse this is approximate.}
+{evidence: Board photo '03 Da bi naši starci znali TEKST.HEIC': chords on lines 1-6 (Gm, Cm, A#, D, F).}
+{evidence: Demucs other+bass chroma with the drone median subtracted, 1.21 s windows, Viterbi over Gm,Cm,Bb,D,D7,F,Dm,Eb: cycles Gm-D7-Cm-Bb-Gm-Dm-Bb-Cm-Gm at 1:53-2:15 and 3:41-4:00 (full-chord parts); first 1:15 mostly Gm (drone + strumming, as the board says).}
+{evidence: basic-pitch MIDI: D 1.00, G 0.89, Bb 0.34, F 0.06; low notes G and D: a G-D drone over G minor.}
+{evidence: Resolve Voice Isolation stem (19.11.2026) used for vocal activity.}
+{uncertain: Chords for lines 7-8 ('gora i sam živi kamen / nega kaj za jesti') are not on the board; copied from lines 3-4 (Gm ... Bb D).}
+{uncertain: Stanzas 3-4 carry the board's stanza 1-2 chords on the same syllable numbers (same melody); not written on the board for those words.}
+{uncertain: 'Filak' is probably Villach in Austria (Kajkavian Filah/Beljak), a town where emigrants worked; kept as written.}
+{uncertain: The handwriting shows 'Gm' crossed out above 'Samo'; the change is read as Bb at 'je' and D at 'kamenje'.}
+
+{section: 1}
+[Gm]Da bi naši starci znali || If only our old folks knew
+[Cm]kakvo je [Gm]življenje, || what kind of life this is,
+[Gm]kud si deca kruha služe, || where their children earn their bread:
+samo [Bb]je [D]kamenje. || there is nothing but stone.
+
+{section: 2}
+[Bb]Oj ti Filak, [Cm]glavni varoš, || Oh you, Filak, the main town,
+[Gm]kak si [F]v [Gm]hudom mesti, || what a harsh place you stand in,
+[~Gm]gora i sam živi kamen, || mountains and nothing but bare rock,
+nega [~Bb]kaj za [~D]jesti. || there is nothing to eat.
+
+{section: 3}
+[Gm]Da bi vnoga majka znala, || If many a mother knew,
+[Cm]bi se ras[Gm]plakala, || she would burst into tears,
+[Gm]kud si sinek kruha služi, || where her little son earns his bread,
+de ga [Bb]ne[D]ga polja. || where there are no fields.
+
+{section: 4}
+[Bb]Bole daj me [Cm]ne bi bila || It would have been better
+[Gm]majči[F]ca ro[Gm]dila, || if my dear mother had never borne me,
+[~Gm]neg kaj me je ovak dalko || than to let me go so far away
+po [~Bb]sveto pu[~D]stila. || out into the world.

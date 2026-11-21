@@ -1,0 +1,357 @@
+{
+  "schema": "ethno-song/1",
+  "number": "03",
+  "slug": "da-bi-nasi-starci-znali",
+  "title": "Da bi naši starci znali",
+  "subtitle": "Kajkavian traditional · Etno orkestar 21-10",
+  "language": "Croatian (Kajkavian)",
+  "key": "G minor",
+  "tempo": "~99 BPM",
+  "rhythm": "2+3 (5/8)",
+  "confidence": "medium",
+  "chord_source": "board",
+  "play": [
+    {
+      "label": "Intro, V1, V2",
+      "chords": "G drone, then Gm strumming only"
+    }
+  ],
+  "sections": [
+    {
+      "name": "1",
+      "lines": [
+        {
+          "text": "Da bi naši starci znali",
+          "translation": "If only our old folks knew",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Gm",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "kakvo je življenje,",
+          "translation": "what kind of life this is,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Cm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 9,
+              "chord": "Gm",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "kud si deca kruha služe,",
+          "translation": "where their children earn their bread:",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Gm",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "samo je kamenje.",
+          "translation": "there is nothing but stone.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 5,
+              "chord": "Bb",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 8,
+              "chord": "D",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2",
+      "lines": [
+        {
+          "text": "Oj ti Filak, glavni varoš,",
+          "translation": "Oh you, Filak, the main town,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Bb",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 13,
+              "chord": "Cm",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "kak si v hudom mesti,",
+          "translation": "what a harsh place you stand in,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Gm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 7,
+              "chord": "F",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 9,
+              "chord": "Gm",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "gora i sam živi kamen,",
+          "translation": "mountains and nothing but bare rock,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Gm",
+              "source": "inferred",
+              "confirmed": false
+            }
+          ]
+        },
+        {
+          "text": "nega kaj za jesti.",
+          "translation": "there is nothing to eat.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 5,
+              "chord": "Bb",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 12,
+              "chord": "D",
+              "source": "inferred",
+              "confirmed": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3",
+      "lines": [
+        {
+          "text": "Da bi vnoga majka znala,",
+          "translation": "If many a mother knew,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Gm",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "bi se rasplakala,",
+          "translation": "she would burst into tears,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Cm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 9,
+              "chord": "Gm",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "kud si sinek kruha služi,",
+          "translation": "where her little son earns his bread,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Gm",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "de ga nega polja.",
+          "translation": "where there are no fields.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 6,
+              "chord": "Bb",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 8,
+              "chord": "D",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4",
+      "lines": [
+        {
+          "text": "Bole daj me ne bi bila",
+          "translation": "It would have been better",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Bb",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 12,
+              "chord": "Cm",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "majčica rodila,",
+          "translation": "if my dear mother had never borne me,",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Gm",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 5,
+              "chord": "F",
+              "source": "board",
+              "confirmed": true
+            },
+            {
+              "at_char": 10,
+              "chord": "Gm",
+              "source": "board",
+              "confirmed": true
+            }
+          ]
+        },
+        {
+          "text": "neg kaj me je ovak dalko",
+          "translation": "than to let me go so far away",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 0,
+              "chord": "Gm",
+              "source": "inferred",
+              "confirmed": false
+            }
+          ]
+        },
+        {
+          "text": "po sveto pustila.",
+          "translation": "out into the world.",
+          "repeat": null,
+          "chords": [
+            {
+              "at_char": 3,
+              "chord": "Bb",
+              "source": "inferred",
+              "confirmed": false
+            },
+            {
+              "at_char": 11,
+              "chord": "D",
+              "source": "inferred",
+              "confirmed": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "arrangement": [
+    "Count (Marko's note): 12|123| 12|123| 12|123| then the break and three hits |1 |2 |3.",
+    "Intro: sax melody, guitars tremolo chord -> G drone + percussion announcement PAM PAM PAM.",
+    "V1: singing + Gm chord (strumming) + percussion. (Guitar stays on Gm.)",
+    "V2: the same + winds, military.",
+    "Instrumental 1: guitars full chords, melodies, fills.",
+    "Instrumental 2: the same + BAGPIPE.",
+    "V3 + V4: singing + full chords + 2nd voice + BAGPIPE + V4 melody.",
+    "Instrumental x1: percussion breaks + NAJ NAJ NAJ.",
+    "Singing LA LA LA + percussion."
+  ],
+  "notes": [
+    "Board writes A# for Bb. In V1 and V2 the guitar strums Gm only; the full chords below are for Instrumental 1 on and V3-V4.",
+    "Grey chords are inferred (not on the board); check by ear."
+  ],
+  "evidence": [
+    "Tempo ~99 BPM from the librosa beat tracker; with a 2+3 pulse this is approximate.",
+    "Board photo '03 Da bi naši starci znali TEKST.HEIC': chords on lines 1-6 (Gm, Cm, A#, D, F).",
+    "Demucs other+bass chroma with the drone median subtracted, 1.21 s windows, Viterbi over Gm,Cm,Bb,D,D7,F,Dm,Eb: cycles Gm-D7-Cm-Bb-Gm-Dm-Bb-Cm-Gm at 1:53-2:15 and 3:41-4:00 (full-chord parts); first 1:15 mostly Gm (drone + strumming, as the board says).",
+    "basic-pitch MIDI: D 1.00, G 0.89, Bb 0.34, F 0.06; low notes G and D: a G-D drone over G minor.",
+    "Resolve Voice Isolation stem (19.11.2026) used for vocal activity."
+  ],
+  "uncertain": [
+    "Chords for lines 7-8 ('gora i sam živi kamen / nega kaj za jesti') are not on the board; copied from lines 3-4 (Gm ... Bb D).",
+    "Stanzas 3-4 carry the board's stanza 1-2 chords on the same syllable numbers (same melody); not written on the board for those words.",
+    "'Filak' is probably Villach in Austria (Kajkavian Filah/Beljak), a town where emigrants worked; kept as written.",
+    "The handwriting shows 'Gm' crossed out above 'Samo'; the change is read as Bb at 'je' and D at 'kamenje'."
+  ],
+  "sources": {
+    "lyrics": "Pjesme tekstovi.pdf (21.11.2026)",
+    "images": [
+      "03 Da bi nasi starci znali TEKST.jpg",
+      "03 Da bi nasi starci znali ARR.jpg"
+    ],
+    "audio": "03 Da bi naši starci znali Etno orkestar 21-10.m4a"
+  }
+}
