@@ -7,11 +7,13 @@ Usage: python3 tools/render_pdf.py [songs/01-x.json ...] [--out PDFs] [--png DIR
 """
 import argparse, glob, json, os
 import fitz  # PyMuPDF
+import notation
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONTS = {k: os.path.join(ROOT, 'fonts', f'OpenSans-{v}.ttf') for k, v in
          (('R', 'Regular'), ('I', 'Italic'), ('S', 'Semibold'), ('B', 'Bold'))}
 METRIC = {k: fitz.Font(fontfile=v) for k, v in FONTS.items()}
+notation.set_fonts(METRIC)
 
 # ---- page geometry (points, 1 pt = 1/72 inch) ----
 PAGE_W, PAGE_H = 595.28, 841.89          # A4 portrait
@@ -34,10 +36,30 @@ FORM = 8.5; FOOTER = 7.5
 CHORD_GAP = 5       # minimum space between two chord names on one row
 MIN_SHRINK = 0.62     # a single line may shrink to this fraction of its size to fit its column
 SCALE_STEPS = [1.0 - 0.02 * i for i in range(16)]   # 1.00 .. 0.70
+BLOCK_GAP = 14      # space under the melody block (page 1) and under the rhythm box (page 2)
+
+
+NOTE_CHARS = '\u2669\u266A'   # ♩ ♪ are not in Open Sans: drawn from Apple Symbols at 1.25 x the size
+SYM_SCALE = 1.25
+
+
+def segments(text):
+    out, cur, sym = [], '', None
+    for ch in text:
+        is_sym = ch in NOTE_CHARS
+        if sym is None or is_sym == sym:
+            cur += ch
+        else:
+            out.append((cur, sym)); cur = ch
+        sym = is_sym
+    if cur:
+        out.append((cur, sym))
+    return out
 
 
 def width(text, font, size):
-    return METRIC[font].text_length(text, fontsize=size)
+    return sum(notation.SYM.text_length(t, fontsize=size * SYM_SCALE) if sym else METRIC[font].text_length(t, fontsize=size)
+               for t, sym in segments(text))
 
 
 def fit_size(text, font, size, maxw):
@@ -52,10 +74,16 @@ class Page:
         self.p = doc.new_page(width=PAGE_W, height=PAGE_H)
         for k, f in FONTS.items():
             self.p.insert_font(fontname='OS' + k, fontfile=f)
+        self.p.insert_font(fontname='ASYM', fontfile=notation.APPLE_SYMBOLS)
 
     def text(self, x, y, s, font, size, color):
-        if s:
-            self.p.insert_text((x, y), s, fontname='OS' + font, fontsize=size, color=color)
+        for t, sym in segments(s or ''):
+            if sym:
+                self.p.insert_text((x, y), t, fontname='ASYM', fontsize=size * SYM_SCALE, color=color)
+                x += notation.SYM.text_length(t, fontsize=size * SYM_SCALE)
+            else:
+                self.p.insert_text((x, y), t, fontname='OS' + font, fontsize=size, color=color)
+                x += METRIC[font].text_length(t, fontsize=size)
 
     def rtext(self, xr, y, s, font, size, color):
         self.text(xr - width(s, font, size), y, s, font, size, color)
@@ -64,10 +92,20 @@ class Page:
         self.p.draw_line((M_LEFT, y), (PAGE_W - M_RIGHT, y), color=RULE, width=0.6)
 
 
+def rhythm_text(song):
+    r = song.get('rhythm')
+    if isinstance(r, dict):
+        t = f"{r['name']} {r['meter']}" if r.get('meter') and r['meter'] not in r['name'] else r['name']
+        if r.get('grouping'):
+            t += f" ({r['grouping']})"
+        return t
+    return r or ''
+
+
 def info_line(song):
     parts = [f"Key {song['key']}"] if song.get('key') else []
     if song.get('tempo'): parts.append(f"Tempo {song['tempo']}")
-    if song.get('rhythm'): parts.append(f"Rhythm {song['rhythm']}")
+    if rhythm_text(song): parts.append(f"Rhythm {rhythm_text(song)}")
     return '   ·   '.join(parts)
 
 
@@ -75,9 +113,9 @@ def header(page, song, tag):
     """Title block; returns the y where content starts."""
     y = M_TOP + TITLE * 0.9
     title = f"{song['number']}  {song['title']}"
-    tsize = fit_size(title, 'B', TITLE, CONTENT_W - 110)
+    tsize = fit_size(title, 'B', TITLE, CONTENT_W)
     page.text(M_LEFT, y, title, 'B', tsize, INK)
-    page.rtext(PAGE_W - M_RIGHT, y, tag, 'S', TAG, LABEL)
+    # no page tag (Marko 21.11.2026: no "FOR SINGERS" / "FOR GUITAR")
     y += 16
     page.text(M_LEFT, y, song.get('subtitle', ''), 'R', fit_size(song.get('subtitle', ''), 'R', SUBTITLE, CONTENT_W), SUB)
     info = info_line(song)
@@ -90,9 +128,8 @@ def header(page, song, tag):
 
 
 def footer(page, song, which, n, total):
-    s = f"ETHNO-HRVATSKA  ·  {song['number']} {song['title']}  ·  {which}  ·  {n}/{total}"
-    w = width(s, 'R', FOOTER)
-    page.text((PAGE_W - w) / 2, FOOTER_Y, s, 'R', FOOTER, FOOT)
+    """No footer is drawn (Marko 21.11.2026: "no footers at all"). FOOTER_Y stays only as the bottom limit of the layout."""
+    return
 
 
 # ------------------------------------------------------------------ singers page
@@ -123,6 +160,69 @@ def singers_blocks(song, k):
                 page.text(x + colw + GUTTER, base, obj['translation'], 'I', ts, TRANS)
         blocks.append((h, draw))
     return blocks
+
+
+def singers_blocks_stacked(song, k, colw):
+    """Two-column fallback for long songs: per line the lyric, the translation under it (one block per line)."""
+    blocks = []
+    for sec in song['sections']:
+        n = len(sec['lines'])
+        for li, ln in enumerate(sec['lines']):
+            h = 0.0
+            label = sec.get('name') if li == 0 else None
+            if label:
+                h += S_LABEL * k * 1.9
+            top = h
+            h += S_LYRIC * k * 1.18 + S_TRANS * k * 0.95 * 1.25 + 2.5 * k
+            if li == n - 1:
+                h += 7 * k
+            def draw(page, x, y, ln=ln, label=label, top=top):
+                if label:
+                    page.text(x, y + S_LABEL * k, label.upper(), 'S', S_LABEL * k, LABEL)
+                base = y + top + S_LYRIC * k
+                rep = ln.get('repeat') or ''
+                repw = width(rep, 'S', S_REPEAT * k) + 6 if rep else 0
+                ls = fit_size(ln['text'], 'R', S_LYRIC * k, colw - repw)
+                page.text(x, base, ln['text'], 'R', ls, INK)
+                if rep:
+                    page.text(x + width(ln['text'], 'R', ls) + 6, base, rep, 'S', S_REPEAT * k, LABEL)
+                ts = S_TRANS * k * 0.95
+                page.text(x, base + ts * 1.25, ln['translation'], 'I', fit_size(ln['translation'], 'I', ts, colw), TRANS)
+            blocks.append((h, draw))
+    return blocks
+
+
+def melody_block(song):
+    mel = song.get('melody')
+    if not mel:
+        return 0, lambda page, x, y: None
+    h, draw = notation.layout_melody(mel, CONTENT_W, 1.0)
+    return h + BLOCK_GAP, lambda page, x, y: draw(page.p, x, y)
+
+
+def rhythm_box(song):
+    r = song.get('rhythm')
+    if not isinstance(r, dict):
+        return 0, lambda page, x, y: None
+    r = dict(r)
+    r['instrument_short'] = 'FRAME DRUM'
+    if r.get('practice'):
+        r['practice_text'] = 'MPA practice: ' + ' '.join('–' if c == '-' else c for c in r['practice'].split()) + ' (PA in place of TAK)'
+    conf = r.get('confidence', '')
+    r['confidence_text'] = conf[:1].upper() + conf[1:] + ('.' if conf and not conf.endswith('.') else '')
+    h, draw = notation.layout_rhythm(r, CONTENT_W, 1.0)
+    legend = ('Frame drum staff: low line DUM (centre of the skin), high line TAK and KA (edge), x = PA, small note in ( ) = touch '
+              '(ghost note). Cells as in MPA Academy: thick left line = accent, numbers under the cells restart on every accent.')
+    lsize = 6.8
+    lines = notation.wrap_text(legend, 'R', lsize, CONTENT_W)
+    lh = lsize * 1.35
+    def draw_all(page, x, y):
+        draw(page.p, x, y)
+        yy = y + h
+        for i, l in enumerate(lines):
+            page.text(x, yy + i * lh + lsize, l, 'R', lsize, LABEL)
+        page.rule(yy + len(lines) * lh + 6)
+    return h + len(lines) * lh + 6 + BLOCK_GAP, draw_all
 
 
 # ------------------------------------------------------------------ guitar page
@@ -246,26 +346,24 @@ def form_block(song, k):
 
 # ------------------------------------------------------------------ packing
 def pack(blocks, avail, ncols):
-    """Greedy: sections in order into ncols columns of height avail; returns columns or None."""
-    cols, cur, h = [], [], 0.0
-    for b in blocks:
-        if h + b[0] > avail and cur:
-            cols.append(cur); cur, h = [], 0.0
-        cur.append(b); h += b[0]
-    cols.append(cur)
-    if len(cols) > ncols or any(sum(b[0] for b in c) > avail for c in cols):
-        return None
-    if ncols == 2:   # balance: the split point that makes the taller column as short as possible
-        flat = [b for c in cols for b in c]
-        hs = [b[0] for b in flat]; total = sum(hs); best, acc = None, 0.0
-        for i in range(1, len(flat)):
-            acc += hs[i - 1]
-            m = max(acc, total - acc)
-            if m <= avail and (best is None or m < best[0]):
-                best = (m, i)
-        if best:
-            cols = [flat[:best[1]], flat[best[1]:]]
-    return cols
+    """Blocks in order into ncols columns of height avail; returns columns or None.
+    The columns are balanced: the smallest column height (from total / ncols upwards, 2 pt steps) that still fits."""
+    hs = [b[0] for b in blocks]
+    total = sum(hs)
+    if not blocks or max(hs) > avail:
+        return None if blocks else [[]]
+    target = max(total / ncols, max(hs))
+    while target <= avail + 1e-6:
+        cols, cur, h = [], [], 0.0
+        for b in blocks:
+            if h + b[0] > target + 1e-6 and cur:
+                cols.append(cur); cur, h = [], 0.0
+            cur.append(b); h += b[0]
+        cols.append(cur)
+        if len(cols) <= ncols:
+            return cols
+        target += 2
+    return None
 
 
 def draw_cols(page, cols, y0, colw):
@@ -280,22 +378,31 @@ def render(song, out_pdf):
     # page 1: singers
     p1 = Page(doc)
     y0 = header(p1, song, 'FOR SINGERS')
-    avail = FOOTER_Y - 18 - y0
-    for k in SCALE_STEPS:
-        blocks = singers_blocks(song, k)
-        cols = pack(blocks, avail, 1)
-        if cols: break
-    else:
+    mh, mdraw = melody_block(song)
+    avail = FOOTER_Y - 18 - y0 - mh
+    s_cols = None
+    half = (CONTENT_W - GUTTER) / 2
+    for ncols, k in [(1, k) for k in SCALE_STEPS[:11]] + [(2, k) for k in SCALE_STEPS]:   # 1 col >= 0.80, else 2 cols
+        blocks = singers_blocks(song, k) if ncols == 1 else singers_blocks_stacked(song, k, half)
+        cols = pack(blocks, avail, ncols)
+        if cols:
+            s_cols = (ncols, k, cols); break
+    if not s_cols:
         raise SystemExit(f"{song['title']}: singers page does not fit even at scale {SCALE_STEPS[-1]:.2f}")
-    draw_cols(p1, cols, y0, CONTENT_W)
+    mdraw(p1, M_LEFT, y0)
+    draw_cols(p1, s_cols[2], y0 + mh, CONTENT_W if s_cols[0] == 1 else half)
     footer(p1, song, 'singers', 1, 2)   # draw before the next page: PyMuPDF orphans earlier Page objects
     # page 2: guitar
     p2 = Page(doc)
     y0 = header(p2, song, 'FOR GUITAR')
+    rh, rdraw = rhythm_box(song)
+    rdraw(p2, M_LEFT, y0)
+    y0 += rh
     chosen = None
-    candidates = [(1, k) for k in SCALE_STEPS[:5]] + [(2, k) for k in SCALE_STEPS[:13]]   # 1 col >= 0.92, else 2 cols >= 0.76
+    candidates = ([(1, k) for k in SCALE_STEPS[:5]] + [(2, k) for k in SCALE_STEPS[:13]] +
+                  [(3, k) for k in SCALE_STEPS])   # 1 col >= 0.92, 2 cols >= 0.76, else 3 cols >= 0.70
     for ncols, k in candidates:
-        colw = CONTENT_W if ncols == 1 else (CONTENT_W - GUTTER) / 2
+        colw = (CONTENT_W - GUTTER * (ncols - 1)) / ncols
         ph, pdraw = play_block(song, k)
         fh, fdraw = form_block(song, min(1.0, k + 0.05))
         avail = FOOTER_Y - 16 - y0 - ph - fh - 10
@@ -310,9 +417,11 @@ def render(song, out_pdf):
     fdraw(p2, M_LEFT, FOOTER_Y - 16 - fh)
     footer(p2, song, 'guitar', 2, 2)
     doc.set_metadata({'title': f"{song['number']} {song['title']}", 'author': 'Etno orkestar · ETHNO-HRVATSKA',
-                      'subject': 'Lyrics, translation and chords', 'creator': 'ETHNO-HRVATSKA tools/render_pdf.py'})
+                      'subject': 'Melody, lyrics, translation, chords and frame-drum rhythm', 'creator': 'ETHNO-HRVATSKA tools/render_pdf.py'})
+    doc.subset_fonts()        # Apple Symbols is 1 MB: embed only the glyphs used
     doc.save(out_pdf, garbage=3, deflate=True)
-    return {'pdf': out_pdf, 'guitar_columns': ncols, 'guitar_scale': round(k, 2)}
+    return {'pdf': out_pdf, 'guitar_columns': ncols, 'guitar_scale': round(k, 2),
+            'singers_columns': s_cols[0], 'singers_scale': round(s_cols[1], 2)}
 
 
 def main():
@@ -327,7 +436,8 @@ def main():
         song = json.load(open(f, encoding='utf-8'))
         out = os.path.join(a.out, f"{song['number']} {song['title']}.pdf")
         r = render(song, out)
-        print(f"{os.path.basename(out)}: guitar {r['guitar_columns']} col, scale {r['guitar_scale']}")
+        print(f"{os.path.basename(out)}: singers {r['singers_columns']} col, scale {r['singers_scale']}; "
+              f"guitar {r['guitar_columns']} col, scale {r['guitar_scale']}")
         if a.png:
             os.makedirs(a.png, exist_ok=True)
             for i, pg in enumerate(fitz.open(out)):

@@ -4,8 +4,16 @@
 {subtitle: Andean huayno (Peru) · Etno orkestar}
 {language: Spanish (Andean)}
 {key: A minor}
-{tempo: ~112 BPM}
-{rhythm: Huayno, 2/4}
+{tempo: ♩ ≈ 85}
+{rhythm: Huayno}
+{rhythm_meter: 2/4}
+{rhythm_grouping: }
+{rhythm_cell: 16}
+{rhythm_cells: D . T T D . T T}
+{rhythm_tempo: ♩ ≈ 85}
+{rhythm_confidence: 2/4 and the long-short-short figure on each beat confirmed by the recording; which strokes are Dum and which Tak to be confirmed by the professor}
+{rhythm_evidence: Demucs drums stem (shaker and hand percussion, no low drum) 0:40-2:40: autocorrelation strongest at 0.708 s = one beat (♩ ≈ 85); three strokes per beat about 0.26 + 0.21 + 0.22 s apart, the huayno eighth + two sixteenths played loosely. The beat tracker's ~112 BPM was not the beat.}
+{melody_info: label=not transcribed yet (the singing is too quiet on the rehearsal recording)  ·  write it in by ear; section=A; lines=1; clef=treble; fifths=0; time=2/4; tempo=♩ ≈ 85; status=not_transcribed; confidence=none; source=pYIN and basic-pitch on the Demucs and the Resolve vocal stems found no continuous voice in the A verses}
 {confidence: high for intro and A, medium for B and C}
 {chord_source: board}
 {audio: 05 Rosaura Lindaura.m4a}

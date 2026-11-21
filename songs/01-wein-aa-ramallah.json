@@ -6,8 +6,170 @@
   "subtitle": "Palestinian traditional · Etno orkestar arr. 30-09-26",
   "language": "Palestinian Arabic (Latin transliteration)",
   "key": "D minor · Maqam Bayati on D",
-  "tempo": "~129 BPM",
-  "rhythm": "Malfouf",
+  "tempo": "♩ ≈ 95",
+  "rhythm": {
+    "name": "Malfouf",
+    "instrument": "Frame drum (bendir, daf, riq)",
+    "meter": "2/4",
+    "grouping": "3+3+2",
+    "cell": 16,
+    "tempo": "♩ ≈ 95",
+    "cells": [
+      "D",
+      "-",
+      "-",
+      "T",
+      "-",
+      "-",
+      "T",
+      "-"
+    ],
+    "syllables": [
+      "DUM",
+      "–",
+      "–",
+      "TAK",
+      "–",
+      "–",
+      "TAK",
+      "–"
+    ],
+    "events": [
+      {
+        "beat": 1.0,
+        "value": "1/16",
+        "stroke": "D",
+        "syllable": "DUM",
+        "accent": true
+      },
+      {
+        "beat": 1.25,
+        "value": "1/16",
+        "stroke": "-",
+        "syllable": "–",
+        "accent": false
+      },
+      {
+        "beat": 1.5,
+        "value": "1/16",
+        "stroke": "-",
+        "syllable": "–",
+        "accent": false
+      },
+      {
+        "beat": 1.75,
+        "value": "1/16",
+        "stroke": "T",
+        "syllable": "TAK",
+        "accent": true
+      },
+      {
+        "beat": 2.0,
+        "value": "1/16",
+        "stroke": "-",
+        "syllable": "–",
+        "accent": false
+      },
+      {
+        "beat": 2.25,
+        "value": "1/16",
+        "stroke": "-",
+        "syllable": "–",
+        "accent": false
+      },
+      {
+        "beat": 2.5,
+        "value": "1/16",
+        "stroke": "T",
+        "syllable": "TAK",
+        "accent": true
+      },
+      {
+        "beat": 2.75,
+        "value": "1/16",
+        "stroke": "-",
+        "syllable": "–",
+        "accent": false
+      }
+    ],
+    "mpa": "MPA Academy TR04 Malfuf / Wahda (8/16): D - - T - - T -",
+    "practice": "D - - P - - P -",
+    "confidence": "confirmed by the recording (Dum strokes 3-3-2 sixteenths apart)",
+    "evidence": "Demucs drums stem 0:40-3:00: gaps between Dum strokes in sixteenths (0.158 s) 3 3 2 repeated (108 gaps of 3, 95 of 2); onset autocorrelation strongest at 1.265 s = one 2/4 bar, so ♩ ≈ 95; one passage in straight quarters (gaps of 4)."
+  },
+  "melody": {
+    "status": "draft",
+    "label": "stanza 1, line 1  ·  draft from the recording, to be confirmed by Marko",
+    "section": "1",
+    "lines": "1",
+    "clef": "treble",
+    "key_signature": {
+      "fifths": -1,
+      "half_flats": [
+        "E"
+      ]
+    },
+    "time": "2/4",
+    "grouping": "",
+    "tempo": "♩ ≈ 95",
+    "confidence": "low",
+    "source": "pYIN pitch track of the Demucs vocal stem, 0:30-0:34 (tools/analysis/melody_plot.py)",
+    "systems": [
+      [
+        {
+          "pitch": "A4",
+          "len": 2,
+          "syllable": "Wein",
+          "chord": "Dm"
+        },
+        {
+          "pitch": "G4",
+          "len": 4,
+          "syllable": "aa"
+        },
+        {
+          "pitch": "A4",
+          "len": 2,
+          "syllable": "Ra-"
+        },
+        {
+          "pitch": "A4",
+          "len": 4,
+          "syllable": "mal-"
+        },
+        {
+          "pitch": "A4",
+          "len": 4,
+          "syllable": "lah,"
+        },
+        {
+          "pitch": "A4",
+          "len": 2,
+          "syllable": "wein"
+        },
+        {
+          "pitch": "G4",
+          "len": 2,
+          "syllable": "aa"
+        },
+        {
+          "pitch": "G4",
+          "len": 2,
+          "syllable": "Ra-"
+        },
+        {
+          "pitch": "A4",
+          "len": 2,
+          "syllable": "mal-"
+        },
+        {
+          "pitch": "A4",
+          "len": 8,
+          "syllable": "lah,"
+        }
+      ]
+    ]
+  },
   "scale": "D  E half-flat  F  G  A  Bb  C  (Bayati: the 2nd step is a quarter-tone, E half-flat; guitar chords avoid E)",
   "confidence": "low-medium",
   "chord_source": "audio",
@@ -234,16 +396,16 @@
     }
   ],
   "arrangement": [
-    "Start from silence, count 1 2 3 (heard on the 30-09-26 recording).",
-    "Rhythm malfouf all through (\"TILILILI ... ritam MAFOUF\").",
-    "Zaghrouta cue: TILILILILILI (the women's trill).",
+    "Start from silence, count-in 1 2 3 (heard on the 30-09-26 recording).",
+    "Malfouf on the frame drum all through (see the rhythm box).",
+    "Zaghrouta (the women's high trill) as a cue.",
     "No arrangement flipchart exists for this song; the form follows the three stanzas of the lyric sheet."
   ],
   "notes": [
     "No chord board exists for this song: every chord comes from the recording analysis (low-medium confidence)."
   ],
   "evidence": [
-    "Tempo ~129 BPM from the librosa beat tracker on drums+mix; malfouf is a 2/4 feel, so ~65 half-time is the same groove.",
+    "Tempo: the librosa beat tracker said ~129 (the 3-sixteenth pulse of Malfouf); the bar is 1.26 s, so ♩ ≈ 95 in 2/4 (tools/analysis/rhythm_check.py, 21.11.2026).",
     "Demucs htdemucs stems (other+bass) -> CQT chroma, 0.93 s windows (2 beats at 129 BPM), Viterbi over Dm,Gm,C,A,A7,Bb,F,Cm,Eb.",
     "Chroma path: Dm dominates; Gm blocks of ~5 s at 0:58 and 1:36; A7->Dm cadences at 1:05-1:10 and 1:23. Free-vocabulary best chord mostly Dm7/Gm7.",
     "2:06-2:24: free best E7 / C#m7 (C#, E, G#), an A-major colour; could be an instrumental or the 3rd stanza over A.",

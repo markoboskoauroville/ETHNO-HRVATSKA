@@ -4,8 +4,20 @@
 {subtitle: Traditional · Etno orkestar arr. 30-09-26}
 {language: Croatian / Bosnian (Štokavian, ikavian-ekavian)}
 {key: E minor}
-{tempo: ~117 BPM}
+{tempo: ♩ ≈ 61, faster later}
 {rhythm: Malfouf}
+{rhythm_meter: 2/4}
+{rhythm_grouping: 3+3+2}
+{rhythm_cell: 16}
+{rhythm_cells: D - - T - - T -}
+{rhythm_tempo: ♩ ≈ 61 (verses), ≈ 73 at 2:40}
+{rhythm_mpa: MPA Academy TR04 Malfuf / Wahda (8/16): D - - T - - T -}
+{rhythm_practice: D - - P - - P -}
+{rhythm_confidence: confirmed by the recording (Dum strokes 3-3-2 sixteenths apart)}
+{rhythm_evidence: Demucs drums stem: onset autocorrelation 0:55-1:25 peaks at 0.73 s (3 sixteenths), 1.24 s (5) and 1.96 s (8 = one bar), so ♩ ≈ 61; at 2:40-3:10 the bar is 1.65 s (♩ ≈ 73); Dum gaps 3 3 2 / 4 4 3 at a coarser grid. The beat tracker's 117 BPM was not the bar.}
+{melody_info: label=stanza 1  ·  draft from the recording, to be confirmed by Marko; section=1; lines=1-2; clef=treble; fifths=1; time=2/4; tempo=♩ ≈ 61; status=draft; confidence=medium for the pitches (E F# G), low for the rhythm (the solo voice is free in verse 1); source=pYIN pitch track of the Demucs vocal stem, 1:01-1:17 (tools/analysis/melody_plot.py)}
+{melody: [Em]E4:1:Pre- E4:1:li [Am]E4:1:pre- E4:1:lo [B]G4:1:mi- F#4:1:lo E4:1:do E4:1:mi- | [Em]E4:2:lo- E4:6:ga}
+{melody: [Am]G4:1:moj G4:1:u F#4:1:voj- F#4:1:sci, [B]G4:1:ja G4:1:ne- G4:1:mam F#4:1:do | [Em]E4:2:ko- E4:6:ga.}
 {confidence: medium}
 {chord_source: board}
 {audio: 02 Preli prelo Etno orkestar arr 30-09-26.m4a}

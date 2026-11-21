@@ -16,6 +16,8 @@ Public repo without README or description (MANTRA_MANIFEST modules/repo-privacy.
 | `songs/evidence/*.analysis.json` | Audio-analysis numbers per song (tempo, key, chord path, basic-pitch pitch classes). |
 | `tools/cho2json.py` | `.cho` -> `.json`. |
 | `tools/render_pdf.py` | `.json` -> `PDFs/<nn> <Title>.pdf` (PyMuPDF, Open Sans). `--png DIR` writes previews. |
+| `tools/notation.py` | Vector notation: the MELODY staff (page 1) and the frame-drum RHYTHM box (page 2), MPA Academy conventions. |
+| `tools/analysis/rhythm_check.py`, `melody_plot.py` | Meter from the drums stem (Dum gaps, autocorrelation); pitch picture of a sung phrase. |
 | `tools/check_lyrics.py` | Every JSON lyric line must be word for word in `source/Pjesme tekstovi.pdf`. |
 | `tools/analysis/` | `analyze.py`, `restricted.py`, `windows.py`: chord/structure analysis of the Demucs stems. |
 | `PDFs/` | The five finished PDFs (also copied to `~/Documents/ETHNO-HRVATSKA/PDF/`). |
@@ -47,11 +49,25 @@ Run: `python3 tools/cho2json.py && python3 tools/check_lyrics.py && python3 tool
 | 04 Dremle mi se | D minor (Dorian) | Dm-G, C->Am, F; solo Dm G Dm G Dm G Bb C | medium-high |
 | 05 Rosaura Lindaura | A minor | intro G7 C E7 Am; Am, C, Em7, F, G, E7 | high (intro, A), medium (B, C) |
 
+## Melody and rhythm (21.11.2026, evening)
+
+Marko: "From the PDF remove my notes on rhythm. Make official rhythm notes any percussionist can understand ... Everything on how to
+write rhythms is in MPA Academy", then "frame drum", then "I need a staff at the top. There is a melody line and lyrics."
+Done: his shorthand is gone from every sheet; each song has a `rhythm` object (MPA cells, two-line frame-drum staff, confidence) and
+a `melody` object (staff at the top of page 1). Per song, with confidence, in `songs/UNCERTAIN.md` (section "Melody and rhythm"):
+Malfouf 2/4 (songs 1, 2, confirmed), Aksak 5/8 2+3 (song 3, five per bar confirmed, order to confirm), 3/4 (song 4, confirmed;
+strokes to confirm), Huayno 2/4 (song 5, figure confirmed; strokes to confirm). Melodies: drafts for 1, 2, 4; songs 3 and 5 have an
+empty staff (voice not separable on the recording). Layout numbers for the Swift app: `songs/SCHEMA.md` sections 5 and 6.
+Stems of this evening (Demucs, songs 1, 2, 4) were made in a scratch folder and not kept.
+
 ## Next
 
 - A Swift Mac app in this repo re-implementing `render_pdf.py` from `songs/SCHEMA.md` (next worker). Compile only via GitHub
   Actions (copy the Mac Swift workflow from MANTRA_MANIFEST/workflows/ as the first commit of the app), updater at start.
 - Marko's ear on `songs/UNCERTAIN.md`; each answer goes into the `.cho`, then regenerate.
+- The professor (Marko) confirms the rhythm strokes of songs 3-5 and the melody drafts of 1, 2, 4; the melodies of 3 and 5 come
+  from him (sung or written) or a cleaner recording.
+- Swift app v2: implement `melody` and the `rhythm` box from SCHEMA.md 5-6 (another worker).
 
 ## The Mac app (21.11.2026, v1)
 

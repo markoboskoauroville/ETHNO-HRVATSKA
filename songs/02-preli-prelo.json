@@ -6,8 +6,226 @@
   "subtitle": "Traditional · Etno orkestar arr. 30-09-26",
   "language": "Croatian / Bosnian (Štokavian, ikavian-ekavian)",
   "key": "E minor",
-  "tempo": "~117 BPM",
-  "rhythm": "Malfouf",
+  "tempo": "♩ ≈ 61, faster later",
+  "rhythm": {
+    "name": "Malfouf",
+    "instrument": "Frame drum (bendir, daf, riq)",
+    "meter": "2/4",
+    "grouping": "3+3+2",
+    "cell": 16,
+    "tempo": "♩ ≈ 61 (verses), ≈ 73 at 2:40",
+    "cells": [
+      "D",
+      "-",
+      "-",
+      "T",
+      "-",
+      "-",
+      "T",
+      "-"
+    ],
+    "syllables": [
+      "DUM",
+      "–",
+      "–",
+      "TAK",
+      "–",
+      "–",
+      "TAK",
+      "–"
+    ],
+    "events": [
+      {
+        "beat": 1.0,
+        "value": "1/16",
+        "stroke": "D",
+        "syllable": "DUM",
+        "accent": true
+      },
+      {
+        "beat": 1.25,
+        "value": "1/16",
+        "stroke": "-",
+        "syllable": "–",
+        "accent": false
+      },
+      {
+        "beat": 1.5,
+        "value": "1/16",
+        "stroke": "-",
+        "syllable": "–",
+        "accent": false
+      },
+      {
+        "beat": 1.75,
+        "value": "1/16",
+        "stroke": "T",
+        "syllable": "TAK",
+        "accent": true
+      },
+      {
+        "beat": 2.0,
+        "value": "1/16",
+        "stroke": "-",
+        "syllable": "–",
+        "accent": false
+      },
+      {
+        "beat": 2.25,
+        "value": "1/16",
+        "stroke": "-",
+        "syllable": "–",
+        "accent": false
+      },
+      {
+        "beat": 2.5,
+        "value": "1/16",
+        "stroke": "T",
+        "syllable": "TAK",
+        "accent": true
+      },
+      {
+        "beat": 2.75,
+        "value": "1/16",
+        "stroke": "-",
+        "syllable": "–",
+        "accent": false
+      }
+    ],
+    "mpa": "MPA Academy TR04 Malfuf / Wahda (8/16): D - - T - - T -",
+    "practice": "D - - P - - P -",
+    "confidence": "confirmed by the recording (Dum strokes 3-3-2 sixteenths apart)",
+    "evidence": "Demucs drums stem: onset autocorrelation 0:55-1:25 peaks at 0.73 s (3 sixteenths), 1.24 s (5) and 1.96 s (8 = one bar), so ♩ ≈ 61; at 2:40-3:10 the bar is 1.65 s (♩ ≈ 73); Dum gaps 3 3 2 / 4 4 3 at a coarser grid. The beat tracker's 117 BPM was not the bar."
+  },
+  "melody": {
+    "status": "draft",
+    "label": "stanza 1  ·  draft from the recording, to be confirmed by Marko",
+    "section": "1",
+    "lines": "1-2",
+    "clef": "treble",
+    "key_signature": {
+      "fifths": 1,
+      "half_flats": []
+    },
+    "time": "2/4",
+    "grouping": "",
+    "tempo": "♩ ≈ 61",
+    "confidence": "medium for the pitches (E F# G), low for the rhythm (the solo voice is free in verse 1)",
+    "source": "pYIN pitch track of the Demucs vocal stem, 1:01-1:17 (tools/analysis/melody_plot.py)",
+    "systems": [
+      [
+        {
+          "pitch": "E4",
+          "len": 1,
+          "syllable": "Pre-",
+          "chord": "Em"
+        },
+        {
+          "pitch": "E4",
+          "len": 1,
+          "syllable": "li"
+        },
+        {
+          "pitch": "E4",
+          "len": 1,
+          "syllable": "pre-",
+          "chord": "Am"
+        },
+        {
+          "pitch": "E4",
+          "len": 1,
+          "syllable": "lo"
+        },
+        {
+          "pitch": "G4",
+          "len": 1,
+          "syllable": "mi-",
+          "chord": "B"
+        },
+        {
+          "pitch": "F#4",
+          "len": 1,
+          "syllable": "lo"
+        },
+        {
+          "pitch": "E4",
+          "len": 1,
+          "syllable": "do"
+        },
+        {
+          "pitch": "E4",
+          "len": 1,
+          "syllable": "mi-"
+        },
+        {
+          "pitch": "E4",
+          "len": 2,
+          "syllable": "lo-",
+          "chord": "Em"
+        },
+        {
+          "pitch": "E4",
+          "len": 6,
+          "syllable": "ga"
+        }
+      ],
+      [
+        {
+          "pitch": "G4",
+          "len": 1,
+          "syllable": "moj",
+          "chord": "Am"
+        },
+        {
+          "pitch": "G4",
+          "len": 1,
+          "syllable": "u"
+        },
+        {
+          "pitch": "F#4",
+          "len": 1,
+          "syllable": "voj-"
+        },
+        {
+          "pitch": "F#4",
+          "len": 1,
+          "syllable": "sci,"
+        },
+        {
+          "pitch": "G4",
+          "len": 1,
+          "syllable": "ja",
+          "chord": "B"
+        },
+        {
+          "pitch": "G4",
+          "len": 1,
+          "syllable": "ne-"
+        },
+        {
+          "pitch": "G4",
+          "len": 1,
+          "syllable": "mam"
+        },
+        {
+          "pitch": "F#4",
+          "len": 1,
+          "syllable": "do"
+        },
+        {
+          "pitch": "E4",
+          "len": 2,
+          "syllable": "ko-",
+          "chord": "Em"
+        },
+        {
+          "pitch": "E4",
+          "len": 6,
+          "syllable": "ga."
+        }
+      ]
+    ]
+  },
   "confidence": "medium",
   "chord_source": "board",
   "play": [

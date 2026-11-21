@@ -6,8 +6,86 @@
   "subtitle": "Kajkavian traditional · Etno orkestar 21-10",
   "language": "Croatian (Kajkavian)",
   "key": "G minor",
-  "tempo": "~99 BPM",
-  "rhythm": "2+3 (5/8)",
+  "tempo": "♪ ≈ 190",
+  "rhythm": {
+    "name": "Aksak 5/8",
+    "instrument": "Frame drum (bendir, daf, riq)",
+    "meter": "5/8",
+    "grouping": "2+3",
+    "cell": 8,
+    "tempo": "♪ ≈ 190",
+    "cells": [
+      "D",
+      "-",
+      "D",
+      "-",
+      "-"
+    ],
+    "syllables": [
+      "DUM",
+      "–",
+      "DUM",
+      "–",
+      "–"
+    ],
+    "events": [
+      {
+        "beat": 1.0,
+        "value": "1/8",
+        "stroke": "D",
+        "syllable": "DUM",
+        "accent": true
+      },
+      {
+        "beat": 1.5,
+        "value": "1/8",
+        "stroke": "-",
+        "syllable": "–",
+        "accent": false
+      },
+      {
+        "beat": 2.0,
+        "value": "1/8",
+        "stroke": "D",
+        "syllable": "DUM",
+        "accent": true
+      },
+      {
+        "beat": 2.5,
+        "value": "1/8",
+        "stroke": "-",
+        "syllable": "–",
+        "accent": false
+      },
+      {
+        "beat": 3.0,
+        "value": "1/8",
+        "stroke": "-",
+        "syllable": "–",
+        "accent": false
+      }
+    ],
+    "mpa": "the same 2+3 frame as MPA Academy TR13 Baiduska (5/16): D - T - -",
+    "confidence": "five eighths per bar confirmed by the recording; the order 2+3 and the strokes inside the bar to be confirmed by the professor",
+    "evidence": "Demucs drums stem 1:40-3:40: gaps between Dum strokes in eighths (0.315 s) alternate 2 and 3 (66 gaps of 3, 61 of 2, few others); a Dum opens both groups, light strokes in between. Which group comes first is not audible from the drums alone; 2+3 follows the rehearsal count."
+  },
+  "melody": {
+    "status": "not_transcribed",
+    "label": "not transcribed yet (the voice is not separable on the rehearsal recording)  ·  write it in by ear",
+    "section": "1",
+    "lines": "1",
+    "clef": "treble",
+    "key_signature": {
+      "fifths": -2,
+      "half_flats": []
+    },
+    "time": "5/8",
+    "grouping": "2+3",
+    "tempo": "♪ ≈ 190",
+    "confidence": "none",
+    "source": "pYIN on the Demucs and the Resolve vocal stems gave only fragments (D4, G4, F4, Bb3)",
+    "systems": []
+  },
   "confidence": "medium",
   "chord_source": "board",
   "play": [
@@ -319,7 +397,7 @@
     }
   ],
   "arrangement": [
-    "Count (Marko's note): 12|123| 12|123| 12|123| then the break and three hits |1 |2 |3.",
+    "Intro count: three bars of 5/8 (2+3), then a break and three single hits.",
     "Intro: sax melody, guitars tremolo chord -> G drone + percussion announcement PAM PAM PAM.",
     "V1: singing + Gm chord (strumming) + percussion. (Guitar stays on Gm.)",
     "V2: the same + winds, military.",
@@ -334,7 +412,7 @@
     "Grey chords are inferred (not on the board); check by ear."
   ],
   "evidence": [
-    "Tempo ~99 BPM from the librosa beat tracker; with a 2+3 pulse this is approximate.",
+    "Meter: the Dum strokes on the drums stem alternate 2 and 3 eighths apart (0.315 s pulse), so 5/8 at ♪ ≈ 190; the beat tracker's ~99 BPM was not the bar (tools/analysis/rhythm_check.py, 21.11.2026).",
     "Board photo '03 Da bi naši starci znali TEKST.HEIC': chords on lines 1-6 (Gm, Cm, A#, D, F).",
     "Demucs other+bass chroma with the drone median subtracted, 1.21 s windows, Viterbi over Gm,Cm,Bb,D,D7,F,Dm,Eb: cycles Gm-D7-Cm-Bb-Gm-Dm-Bb-Cm-Gm at 1:53-2:15 and 3:41-4:00 (full-chord parts); first 1:15 mostly Gm (drone + strumming, as the board says).",
     "basic-pitch MIDI: D 1.00, G 0.89, Bb 0.34, F 0.06; low notes G and D: a G-D drone over G minor.",

@@ -6,8 +6,112 @@
   "subtitle": "Andean huayno (Peru) · Etno orkestar",
   "language": "Spanish (Andean)",
   "key": "A minor",
-  "tempo": "~112 BPM",
-  "rhythm": "Huayno, 2/4",
+  "tempo": "♩ ≈ 85",
+  "rhythm": {
+    "name": "Huayno",
+    "instrument": "Frame drum (bendir, daf, riq)",
+    "meter": "2/4",
+    "grouping": "",
+    "cell": 16,
+    "tempo": "♩ ≈ 85",
+    "cells": [
+      "D",
+      "",
+      "T",
+      "T",
+      "D",
+      "",
+      "T",
+      "T"
+    ],
+    "syllables": [
+      "DUM",
+      "",
+      "TAK",
+      "TAK",
+      "DUM",
+      "",
+      "TAK",
+      "TAK"
+    ],
+    "events": [
+      {
+        "beat": 1.0,
+        "value": "1/16",
+        "stroke": "D",
+        "syllable": "DUM",
+        "accent": true
+      },
+      {
+        "beat": 1.25,
+        "value": "1/16",
+        "stroke": "",
+        "syllable": "",
+        "accent": false
+      },
+      {
+        "beat": 1.5,
+        "value": "1/16",
+        "stroke": "T",
+        "syllable": "TAK",
+        "accent": true
+      },
+      {
+        "beat": 1.75,
+        "value": "1/16",
+        "stroke": "T",
+        "syllable": "TAK",
+        "accent": true
+      },
+      {
+        "beat": 2.0,
+        "value": "1/16",
+        "stroke": "D",
+        "syllable": "DUM",
+        "accent": true
+      },
+      {
+        "beat": 2.25,
+        "value": "1/16",
+        "stroke": "",
+        "syllable": "",
+        "accent": false
+      },
+      {
+        "beat": 2.5,
+        "value": "1/16",
+        "stroke": "T",
+        "syllable": "TAK",
+        "accent": true
+      },
+      {
+        "beat": 2.75,
+        "value": "1/16",
+        "stroke": "T",
+        "syllable": "TAK",
+        "accent": true
+      }
+    ],
+    "confidence": "2/4 and the long-short-short figure on each beat confirmed by the recording; which strokes are Dum and which Tak to be confirmed by the professor",
+    "evidence": "Demucs drums stem (shaker and hand percussion, no low drum) 0:40-2:40: autocorrelation strongest at 0.708 s = one beat (♩ ≈ 85); three strokes per beat about 0.26 + 0.21 + 0.22 s apart, the huayno eighth + two sixteenths played loosely. The beat tracker's ~112 BPM was not the beat."
+  },
+  "melody": {
+    "status": "not_transcribed",
+    "label": "not transcribed yet (the singing is too quiet on the rehearsal recording)  ·  write it in by ear",
+    "section": "A",
+    "lines": "1",
+    "clef": "treble",
+    "key_signature": {
+      "fifths": 0,
+      "half_flats": []
+    },
+    "time": "2/4",
+    "grouping": "",
+    "tempo": "♩ ≈ 85",
+    "confidence": "none",
+    "source": "pYIN and basic-pitch on the Demucs and the Resolve vocal stems found no continuous voice in the A verses",
+    "systems": []
+  },
   "confidence": "high for intro and A, medium for B and C",
   "chord_source": "board",
   "play": [

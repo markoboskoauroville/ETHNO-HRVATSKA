@@ -4,8 +4,17 @@
 {subtitle: Traditional (Međimurje?) · Etno orkestar 21-10}
 {language: Croatian}
 {key: D minor (D Dorian: B natural)}
-{tempo: ~136 BPM (approx.)}
-{rhythm: "123 ja ostajem" (Marko's note)}
+{tempo: ♩ ≈ 140}
+{rhythm: Triple meter}
+{rhythm_meter: 3/4}
+{rhythm_grouping: }
+{rhythm_cell: 4}
+{rhythm_cells: D T T}
+{rhythm_tempo: ♩ ≈ 140}
+{rhythm_confidence: three beats per bar confirmed by the recording; the strokes D T T to be confirmed by the professor}
+{rhythm_evidence: Demucs drums stem 3:20-6:00: even pulse 0.43 s (♩ ≈ 140); onset periodicity folded over 3 beats is clearly stronger than over 2 or 4 (contrast 0.24 vs 0.05 / 0.06); the deepest Dum comes every 6 beats (two bars).}
+{melody_info: label=stanza 1, lines 1-2  ·  draft from the recording (solo voice of A), to be confirmed by Marko; section=1; lines=1-2; clef=treble8; fifths=-1; time=3/4; tempo=♩ ≈ 140; status=draft; confidence=medium for the pitches, low for the rhythm (the solo A is sung freely); source=pYIN pitch track of the Demucs vocal stem, 2:24-2:35 (tools/analysis/melody_plot.py)}
+{melody: [Dm]A3:2:Drem- A3:2:le A3:2:mi [G]A3:2:se, F3:2:mi- [Dm]E3:2:la | D3:4:maj- [G]D3:8:ko, | [Dm]A3:4:spa- A3:2:va- A3:2:la G3:4:bi | [C]E3:8:ja. [Am]~E3:4}
 {confidence: medium-high}
 {chord_source: board}
 {audio: 04Dremle mi se Etno orkestar 21-10.m4a}
@@ -31,7 +40,7 @@
 {uncertain: 'kano kraj mulca': mulac is not a common word; read as 'mule' (rhyme with vujca), marked (?) in the translation. Needs a speaker of the dialect.}
 {uncertain: 'A šta ću ti ja?' is idiomatic: 'And what can I do about it?' / 'What good is that to me?'.}
 {uncertain: The old PDF of 19.11.2026 had the words of a different song ('Dremle mi se, dremle, na krovu golobek'); replaced with Pjesme tekstovi.pdf.}
-{uncertain: Meter not measured reliably; the beat tracker reports ~136 BPM.}
+{uncertain: Meter 3/4 measured on the drums stem (periodicity at 3 and 6 beats); the frame-drum strokes D T T are the plain 3/4 pattern, to be confirmed by the professor.}
 
 {section: 1}
 [Dm]Dremle mi [G]se, mi[Dm]la maj[G]ko, || I'm so sleepy, dear mother,
