@@ -6,7 +6,7 @@ import CoreGraphics
 // page 1 for singers (lyrics + translation), page 2 for the guitarist (chords above the words, form at the bottom).
 // y grows downwards: the context is flipped once per page.
 
-enum Face: String, CaseIterable { case R = "Regular", I = "Italic", S = "Semibold", B = "Bold" }
+enum Face: String, CaseIterable { case R = "Regular", I = "Italic", S = "Semibold", B = "Bold", sym = "Symbols" }
 
 final class Fonts {
     static let shared = Fonts()
@@ -17,7 +17,7 @@ final class Fonts {
     init() {
         let bundleDir = Bundle.main.resourceURL?.appendingPathComponent("fonts")
         let repoDir = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Developer/ETHNO-HRVATSKA/fonts")
-        for f in Face.allCases {
+        for f in Face.allCases where f != .sym {
             let name = "OpenSans-\(f.rawValue).ttf"
             var found = false
             for dir in [bundleDir, repoDir].compactMap({ $0 }) {
@@ -35,18 +35,33 @@ final class Fonts {
         let key = "\(f.rawValue)\(size)"
         if let c = cache[key] { return c }
         let ft: CTFont
-        if let d = descriptors[f] { ft = CTFontCreateWithFontDescriptor(d, size, nil) }
+        if f == .sym { ft = CTFontCreateWithName("Apple Symbols" as CFString, size, nil) }
+        else if let d = descriptors[f] { ft = CTFontCreateWithFontDescriptor(d, size, nil) }
         else { ft = CTFontCreateWithName("Helvetica" as CFString, size, nil) }
         cache[key] = ft
         return ft
     }
 
+    /// Text as one CTLine. The characters of the note symbols (U+2669, U+266A) are not in Open Sans: they come from
+    /// Apple Symbols at 1.25 x the size, same baseline (SCHEMA.md section 3).
     func line(_ s: String, _ f: Face, _ size: CGFloat, _ color: CGColor = CGColor(gray: 0, alpha: 1)) -> CTLine {
-        let attrs: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key(kCTFontAttributeName as String): font(f, size),
-            NSAttributedString.Key(kCTForegroundColorAttributeName as String): color,
-        ]
-        return CTLineCreateWithAttributedString(NSAttributedString(string: s, attributes: attrs))
+        let fontKey = NSAttributedString.Key(kCTFontAttributeName as String)
+        let colorKey = NSAttributedString.Key(kCTForegroundColorAttributeName as String)
+        let out = NSMutableAttributedString()
+        var run = "", runSym = false
+        func flush() {
+            if run.isEmpty { return }
+            let ft = runSym ? font(.sym, size * 1.25) : font(f, size)
+            out.append(NSAttributedString(string: run, attributes: [fontKey: ft, colorKey: color]))
+            run = ""
+        }
+        for ch in s {
+            let isSym = f != .sym && (ch == "\u{2669}" || ch == "\u{266A}")
+            if isSym != runSym { flush(); runSym = isSym }
+            run.append(ch)
+        }
+        flush()
+        return CTLineCreateWithAttributedString(out)
     }
 
     func width(_ s: String, _ f: Face, _ size: CGFloat) -> CGFloat {
@@ -113,15 +128,14 @@ enum Renderer {
         var parts: [String] = []
         if !s.key.isEmpty { parts.append("Key \(s.key)") }
         if !s.tempo.isEmpty { parts.append("Tempo \(s.tempo)") }
-        if !s.rhythm.isEmpty { parts.append("Rhythm \(s.rhythm)") }
+        if !s.rhythmText.isEmpty { parts.append("Rhythm \(s.rhythmText)") }
         return parts.joined(separator: "   ·   ")
     }
 
-    static func header(_ p: Pg, _ song: Song, _ tag: String) -> CGFloat {
+    static func header(_ p: Pg, _ song: Song) -> CGFloat {
         var y = L.mTop + L.title * 0.9
         let title = "\(song.number)  \(song.title)"
-        p.text(L.mLeft, y, title, .B, fit(title, .B, L.title, L.contentW - 110), L.ink)
-        p.rtext(L.pageW - L.mRight, y, tag, .S, L.tag, L.label)
+        p.text(L.mLeft, y, title, .B, fit(title, .B, L.title, L.contentW), L.ink)
         y += 16
         p.text(L.mLeft, y, song.subtitle, .R, fit(song.subtitle, .R, L.subtitle, L.contentW), L.sub)
         let info = infoLine(song)
@@ -129,12 +143,6 @@ enum Renderer {
         y += 10
         p.rule(y)
         return y + 18
-    }
-
-    static func footer(_ p: Pg, _ song: Song, _ which: String, _ n: Int, _ total: Int) {
-        let s = "ETHNO-HRVATSKA  ·  \(song.number) \(song.title)  ·  \(which)  ·  \(n)/\(total)"
-        let w = width(s, .R, L.footer)
-        p.text((L.pageW - w) / 2, L.footerY, s, .R, L.footer, L.foot)
     }
 
     // ---------------------------------------------------------------- singers page
@@ -292,30 +300,56 @@ enum Renderer {
 
     // ---------------------------------------------------------------- packing
     static func pack(_ blocks: [Block], _ avail: CGFloat, _ ncols: Int) -> [[Block]]? {
-        var cols: [[Block]] = [], cur: [Block] = []
-        var h: CGFloat = 0
-        for b in blocks {
-            if h + b.h > avail && !cur.isEmpty { cols.append(cur); cur = []; h = 0 }
-            cur.append(b); h += b.h
-        }
-        cols.append(cur)
-        if cols.count > ncols || cols.contains(where: { $0.reduce(0) { $0 + $1.h } > avail }) { return nil }
-        if ncols == 2 {
-            let flat = cols.flatMap { $0 }
-            let hs = flat.map { $0.h }
-            let total = hs.reduce(0, +)
-            var best: (CGFloat, Int)? = nil
-            var acc: CGFloat = 0
-            if flat.count > 1 {
-                for i in 1..<flat.count {
-                    acc += hs[i - 1]
-                    let m = max(acc, total - acc)
-                    if m <= avail && (best == nil || m < best!.0) { best = (m, i) }
-                }
+        if blocks.isEmpty { return [[]] }
+        let hs = blocks.map { $0.h }
+        let total = hs.reduce(0, +)
+        if hs.max()! > avail { return nil }
+        var target = max(total / CGFloat(ncols), hs.max()!)
+        while target <= avail + 1e-6 {
+            var cols: [[Block]] = [], cur: [Block] = []
+            var h: CGFloat = 0
+            for b in blocks {
+                if h + b.h > target + 1e-6 && !cur.isEmpty { cols.append(cur); cur = []; h = 0 }
+                cur.append(b); h += b.h
             }
-            if let b = best { cols = [Array(flat[..<b.1]), Array(flat[b.1...])] }
+            cols.append(cur)
+            if cols.count <= ncols { return cols }
+            target += 2
         }
-        return cols
+        return nil
+    }
+
+    static func singersBlocksStacked(_ song: Song, _ k: CGFloat, _ colw: CGFloat) -> [Block] {
+        var blocks: [Block] = []
+        for sec in song.sections {
+            let n = sec.lines.count
+            for (li, ln) in sec.lines.enumerated() {
+                var h: CGFloat = 0
+                let label: String? = (li == 0 && !sec.name.isEmpty) ? sec.name : nil
+                if label != nil { h += L.sLabel * k * 1.9 }
+                let top = h
+                h += L.sLyric * k * 1.18 + L.sTrans * k * 0.95 * 1.25 + 2.5 * k
+                if li == n - 1 { h += 7 * k }
+                blocks.append(Block(h: h) { p, x, y in
+                    if let label = label { p.text(x, y + L.sLabel * k, label.uppercased(), .S, L.sLabel * k, L.label) }
+                    let base = y + top + L.sLyric * k
+                    let rep = ln.repeatMark ?? ""
+                    let repw = rep.isEmpty ? 0 : width(rep, .S, L.sRepeat * k) + 6
+                    let ls = fit(ln.text, .R, L.sLyric * k, colw - repw)
+                    p.text(x, base, ln.text, .R, ls, L.ink)
+                    if !rep.isEmpty { p.text(x + width(ln.text, .R, ls) + 6, base, rep, .S, L.sRepeat * k, L.label) }
+                    let ts = L.sTrans * k * 0.95
+                    p.text(x, base + ts * 1.25, ln.translation, .I, fit(ln.translation, .I, ts, colw), L.trans)
+                })
+            }
+        }
+        return blocks
+    }
+
+    static func melodyBlock(_ song: Song) -> Block {
+        guard let m = song.melody else { return Block(h: 0) { _, _, _ in } }
+        let b = Notation.layoutMelody(m, L.contentW, 1)
+        return Block(h: b.h + 14, draw: b.draw)
     }
 
     static func drawCols(_ p: Pg, _ cols: [[Block]], _ y0: CGFloat, _ colw: CGFloat) {
@@ -348,24 +382,35 @@ enum Renderer {
         }
         // page 1
         var p = begin()
-        var y0 = header(p, song, "FOR SINGERS")
-        var avail = L.footerY - 18 - y0
-        var cols1: [[Block]]? = nil
-        for k in L.scaleSteps {
-            if let c = pack(singersBlocks(song, k), avail, 1) { cols1 = c; break }
+        var y0 = header(p, song)
+        let mb = melodyBlock(song)
+        var avail = L.footerY - 18 - y0 - mb.h
+        let half = (L.contentW - L.gutter) / 2
+        var singers: (Int, CGFloat, [[Block]])? = nil
+        var tries: [(Int, CGFloat)] = L.scaleSteps.prefix(11).map { (1, $0) }
+        tries += L.scaleSteps.map { (2, $0) }
+        for (nc, k) in tries {
+            let blocks = nc == 1 ? singersBlocks(song, k) : singersBlocksStacked(song, k, half)
+            if let c = pack(blocks, avail, nc) { singers = (nc, k, c); break }
         }
-        guard let c1 = cols1 else { throw RenderError.msg("\(song.title): the singers page does not fit even at the smallest size. Shorten the song or split it.") }
-        drawCols(p, c1, y0, L.contentW)
-        footer(p, song, "singers", 1, 2)
+        guard let sg = singers else { throw RenderError.msg("\(song.title): the singers page does not fit even at the smallest size. Shorten the song or split it.") }
+        mb.draw(p, L.mLeft, y0)
+        drawCols(p, sg.2, y0 + mb.h, sg.0 == 1 ? L.contentW : half)
         ctx.endPDFPage()
         // page 2
         p = begin()
-        y0 = header(p, song, "FOR GUITAR")
+        y0 = header(p, song)
+        if let r = song.rhythmObj {
+            let rb = Notation.rhythmBox(r, L.contentW)
+            rb.draw(p, L.mLeft, y0)
+            y0 += rb.h
+        }
         var candidates: [(Int, CGFloat)] = L.scaleSteps.prefix(5).map { (1, $0) }
         candidates += L.scaleSteps.prefix(13).map { (2, $0) }
+        candidates += L.scaleSteps.map { (3, $0) }
         var chosen: (Int, CGFloat, CGFloat, Block, Block, [[Block]])? = nil
         for (ncols, k) in candidates {
-            let colw = ncols == 1 ? L.contentW : (L.contentW - L.gutter) / 2
+            let colw = (L.contentW - L.gutter * CGFloat(ncols - 1)) / CGFloat(ncols)
             let pb = playBlock(song, k)
             let fb = formBlock(song, min(1.0, k + 0.05))
             avail = L.footerY - 16 - y0 - pb.h - fb.h - 10
@@ -375,7 +420,6 @@ enum Renderer {
         ch.3.draw(p, L.mLeft, y0)
         drawCols(p, ch.5, y0 + ch.3.h, ch.1)
         ch.4.draw(p, L.mLeft, L.footerY - 16 - ch.4.h)
-        footer(p, song, "guitar", 2, 2)
         ctx.endPDFPage()
         ctx.closePDF()
         var warn: [String] = []

@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 import PDFKit
 
-let VERSION = 1
+let VERSION = 2
 let APP_NAME = "Ethno Song Sheets (Mantra)"
 
 @main

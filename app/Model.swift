@@ -121,8 +121,8 @@ struct Song: Codable, Equatable, Identifiable {
     var key = ""
     var tempo = ""
     var rhythm = ""
-    var rhythmObject: JSONValue? = nil   // newer schema: rhythm as an object, kept as is
-    var melody: JSONValue? = nil         // newer schema: melody staff data, kept as is
+    var rhythmObj: Rhythm? = nil
+    var melody: Melody? = nil
     var scale: String? = nil
     var confidence = ""
     var chord_source = "audio"
@@ -146,12 +146,9 @@ struct Song: Codable, Equatable, Identifiable {
         schema = try c.decodeIfPresent(String.self, forKey: .schema) ?? "ethno-song/1"
         number = try s(.number); slug = try s(.slug); title = try s(.title); subtitle = try s(.subtitle)
         language = try s(.language); key = try s(.key); tempo = try s(.tempo)
-        if let r = try? c.decodeIfPresent(String.self, forKey: .rhythm) { rhythm = r }
-        else if let o = try? c.decodeIfPresent(JSONValue.self, forKey: .rhythm) {
-            rhythmObject = o
-            if case .obj(let d) = o, case .str(let n)? = d["name"] { rhythm = n }
-        }
-        melody = try? c.decodeIfPresent(JSONValue.self, forKey: .melody)
+        if let r = (try? c.decodeIfPresent(String.self, forKey: .rhythm)) ?? nil { rhythm = r }
+        else if let o = (try? c.decodeIfPresent(Rhythm.self, forKey: .rhythm)) ?? nil { rhythmObj = o; rhythm = o.name }
+        melody = (try? c.decodeIfPresent(Melody.self, forKey: .melody)) ?? nil
         scale = try c.decodeIfPresent(String.self, forKey: .scale)
         confidence = try s(.confidence)
         chord_source = try c.decodeIfPresent(String.self, forKey: .chord_source) ?? "audio"
@@ -167,7 +164,7 @@ struct Song: Codable, Equatable, Identifiable {
         var c = e.container(keyedBy: CodingKeys.self)
         try c.encode(schema, forKey: .schema); try c.encode(number, forKey: .number); try c.encode(slug, forKey: .slug)
         try c.encode(title, forKey: .title); try c.encode(subtitle, forKey: .subtitle); try c.encode(language, forKey: .language)
-        try c.encode(key, forKey: .key); try c.encode(tempo, forKey: .tempo); if let o = rhythmObject { try c.encode(o, forKey: .rhythm) } else { try c.encode(rhythm, forKey: .rhythm) }
+        try c.encode(key, forKey: .key); try c.encode(tempo, forKey: .tempo); if let o = rhythmObj { try c.encode(o, forKey: .rhythm) } else { try c.encode(rhythm, forKey: .rhythm) }
         try c.encodeIfPresent(melody, forKey: .melody)
         try c.encodeIfPresent(scale, forKey: .scale)
         try c.encode(confidence, forKey: .confidence); try c.encode(chord_source, forKey: .chord_source)
@@ -185,6 +182,15 @@ struct Song: Codable, Equatable, Identifiable {
             else if !dash && !out.isEmpty { out += "-"; dash = true }
         }
         return out.trimmingCharacters(in: CharacterSet(charactersIn: "-")).isEmpty ? "song" : out.trimmingCharacters(in: CharacterSet(charactersIn: "-"))
+    }
+
+    /// Rhythm as the info line prints it: name, meter unless in the name, (grouping). SCHEMA.md section 3.
+    var rhythmText: String {
+        guard let r = rhythmObj else { return rhythm }
+        var t = r.name
+        if !r.meter.isEmpty && !r.name.contains(r.meter) { t += " " + r.meter }
+        if !r.grouping.isEmpty { t += " (\(r.grouping))" }
+        return t
     }
 
     var pdfName: String {

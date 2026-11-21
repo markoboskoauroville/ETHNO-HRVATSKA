@@ -184,7 +184,7 @@ struct SongEditor: View {
                         HStack { field("Number", $song.number, width: 120); field("Title", $song.title) }
                         field("Subtitle", $song.subtitle)
                         HStack { field("Key", $song.key); field("Tempo", $song.tempo) }
-                        field("Rhythm", $song.rhythm)
+                        if song.rhythmObj == nil { field("Rhythm", $song.rhythm) }
                     }.padding(4)
                 }
                 HStack {
@@ -212,6 +212,8 @@ struct SongEditor: View {
                         Button("Add row") { song.play.append(PlayRow()) }
                     }.padding(4)
                 }
+                RhythmEditor(song: $song)
+                MelodyEditor(song: $song)
                 GroupBox("Form (one step per line)") {
                     TextEditor(text: joined({ song.arrangement }, { song.arrangement = $0 }))
                         .font(.body).frame(minHeight: 70)
@@ -539,4 +541,145 @@ struct AudioBar: View {
             }
         }
     }
+}
+
+// ---------------------------------------------------------------- frame-drum rhythm (MPA)
+struct RhythmEditor: View {
+    @Binding var song: Song
+    var r: Binding<Rhythm> { Binding(get: { song.rhythmObj ?? Rhythm() }, set: { song.rhythmObj = $0; song.rhythm = $0.name }) }
+    var cellsText: Binding<String> {
+        Binding(get: { r.wrappedValue.cells.map { $0.isEmpty ? "." : $0 }.joined(separator: " ") },
+                set: { t in
+                    var v = r.wrappedValue
+                    let cells = t.split(whereSeparator: { $0.isWhitespace }).map { $0 == "." ? "" : String($0) }
+                    if cells == v.cells { return }
+                    v.cells = cells
+                    v.syllables = cells.map { Notation.syll[$0] ?? $0 }
+                    let n = max(v.cell, 1)
+                    v.events = .arr(cells.enumerated().map { i, c in
+                        .obj(["beat": .num(1 + Double(i) * 4.0 / Double(n)), "value": .str("1/\(n)"), "stroke": .str(c),
+                              "syllable": .str(Notation.syll[c] ?? c), "accent": .str("DTKP".contains(c) && !c.isEmpty ? c : "")])
+                    })
+                    r.wrappedValue = v
+                })
+    }
+    var body: some View {
+        GroupBox("Frame drum rhythm (MPA Academy: D Dum, T Tak, K Ka, P Pa, - touch, . silence)") {
+            VStack(alignment: .leading, spacing: 6) {
+                if song.rhythmObj == nil {
+                    Text("This song has no official rhythm yet.").font(.caption).foregroundColor(.secondary)
+                    Button("Add a rhythm") { var n = Rhythm(); n.name = song.rhythm; n.cells = ["D", "-", "-", "T", "-", "-", "T", "-"]; n.meter = "2/4"; song.rhythmObj = n }
+                } else {
+                    HStack { TextField("Name (Malfouf)", text: r.name); TextField("Meter 2/4", text: r.meter).frame(width: 80); TextField("Grouping 3+3+2", text: r.grouping).frame(width: 110) }
+                    HStack {
+                        TextField("Tempo", text: r.tempo)
+                        Picker("Cell", selection: r.cell) { Text("1/16").tag(16); Text("1/8").tag(8); Text("1/4").tag(4) }.frame(width: 140)
+                    }
+                    TextField("Cells: D - - T - - T -", text: cellsText).font(.system(.body, design: .monospaced))
+                    TextField("Practice (PA in place of TAK): D - - P - - P -", text: r.practice)
+                    TextField("Confidence", text: r.confidence)
+                    Button("Remove rhythm", role: .destructive) { song.rhythmObj = nil }
+                }
+            }.padding(4)
+        }
+    }
+}
+
+// ---------------------------------------------------------------- melody staff: a note list per staff line
+func noteLine(_ n: MNote) -> String {
+    var t = "\(n.pitch) \(n.len) \(n.syllable.isEmpty ? "_" : n.syllable)"
+    if let c = n.chord, !c.isEmpty { t += " @\(c)" }
+    if n.tie { t += " ~" }
+    return t
+}
+
+func parseNotes(_ text: String) -> ([MNote], String?) {
+    var out: [MNote] = []
+    for (i, raw) in text.components(separatedBy: .newlines).enumerated() {
+        let tok = raw.split(whereSeparator: { $0.isWhitespace }).map(String.init)
+        if tok.isEmpty { continue }
+        guard tok.count >= 2, let len = Int(tok[1]), [1, 2, 3, 4, 6, 8, 12, 16].contains(len) else { return (out, "Line \(i + 1): write pitch and length (1 2 3 4 6 8 12 16 sixteenths), e.g. E4 2 Dre-") }
+        let p = tok[0]
+        let ok = p == "R" || (p.count >= 2 && "CDEFGAB".contains(p.first!) && Int(String(p.last!)) != nil)
+        if !ok { return (out, "Line \(i + 1): pitch like E4, F#4, Bb3, Ed4 (half-flat), Bn4 or R") }
+        var n = MNote(); n.pitch = p; n.len = len; n.syllable = ""
+        for t in tok.dropFirst(2) {
+            if t.hasPrefix("@") { n.chord = String(t.dropFirst()) }
+            else if t == "~" { n.tie = true }
+            else if t != "_" { n.syllable = t }
+        }
+        out.append(n)
+    }
+    return (out, nil)
+}
+
+struct SystemEditor: View {
+    @Binding var notes: [MNote]
+    let index: Int
+    let onDelete: () -> Void
+    @State var text: String
+    @State var error: String?
+    init(notes: Binding<[MNote]>, index: Int, onDelete: @escaping () -> Void) {
+        _notes = notes; self.index = index; self.onDelete = onDelete
+        _text = State(initialValue: notes.wrappedValue.map(noteLine).joined(separator: "\n"))
+    }
+    var body: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            HStack {
+                Text("Staff line \(index + 1): one note per line  (pitch length syllable @chord ~tie)").font(.caption).foregroundColor(.secondary)
+                Spacer()
+                Button("Delete staff line", role: .destructive) { onDelete() }.buttonStyle(.borderless)
+            }
+            TextEditor(text: $text).font(.system(size: 12, design: .monospaced)).frame(minHeight: 90)
+                .onChange(of: text) { _, t in
+                    let (n, e) = parseNotes(t)
+                    error = e
+                    if e == nil { notes = n }
+                }
+            if let e = error { Text(e).font(.caption).foregroundColor(.red) }
+        }
+    }
+}
+
+struct MelodyEditor: View {
+    @Binding var song: Song
+    var m: Binding<Melody> { Binding(get: { song.melody ?? Melody() }, set: { song.melody = $0 }) }
+    var halfFlats: Binding<String> {
+        Binding(get: { m.wrappedValue.key_signature.half_flats.joined(separator: " ") },
+                set: { m.wrappedValue.key_signature.half_flats = $0.split(whereSeparator: { $0.isWhitespace || $0 == "," }).map { String($0).uppercased() } })
+    }
+    var body: some View {
+        GroupBox("Melody staff at the top of page 1") {
+            VStack(alignment: .leading, spacing: 6) {
+                if song.melody == nil {
+                    Text("No melody staff yet. Without notes an empty staff is drawn to write in by hand.").font(.caption).foregroundColor(.secondary)
+                    Button("Add a melody staff") { var n = Melody(); n.status = "not_transcribed"; n.label = "to be written"; n.time = "2/4"; song.melody = n }
+                } else {
+                    TextField("Label (stanza 1 · draft ...)", text: m.label)
+                    HStack {
+                        Picker("Clef", selection: m.clef) { Text("Treble").tag("treble"); Text("Treble 8 (male voice)").tag("treble8") }.frame(width: 260)
+                        TextField("Time 2/4", text: m.time).frame(width: 70)
+                        TextField("Beams 2+3", text: Binding(get: { m.wrappedValue.grouping ?? "" }, set: { m.wrappedValue.grouping = $0.isEmpty ? nil : $0 })).frame(width: 90)
+                    }
+                    HStack {
+                        Stepper("Sharps (+) / flats (-): \(m.wrappedValue.key_signature.fifths)", value: m.key_signature.fifths, in: -7...7)
+                        TextField("Half-flats (E)", text: halfFlats).frame(width: 110)
+                    }
+                    ForEach(Array(m.wrappedValue.systems.indices), id: \.self) { i in
+                        SystemEditor(notes: Binding(get: { song.melody?.systems[safe: i] ?? [] }, set: { if song.melody != nil && i < song.melody!.systems.count { song.melody!.systems[i] = $0 } }),
+                                     index: i) { song.melody?.systems.remove(at: i) }
+                    }
+                    HStack {
+                        Button("Add staff line") { song.melody?.systems.append([]) }
+                        Spacer()
+                        Button("Remove melody", role: .destructive) { song.melody = nil }
+                    }
+                }
+            }.padding(4)
+        }.id(song.id)
+    }
+}
+
+extension Array {
+    subscript(safe i: Int) -> Element? { indices.contains(i) ? self[i] : nil }
 }
