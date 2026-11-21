@@ -56,7 +56,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 window.setFrameOrigin(NSPoint(x: s.frame.minX + 40, y: s.frame.minY + 40))
             }
             window.orderFrontRegardless()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { self.shot(arg("--shot")!) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { self.shot(self.arg("--shot")!) }
         }
     }
 

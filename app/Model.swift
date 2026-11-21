@@ -2,6 +2,31 @@ import Foundation
 
 // Song JSON, schema ethno-song/1 (songs/SCHEMA.md). Every field round-trips, so editing a song never loses data.
 
+/// Any JSON value, kept untouched so fields this app does not edit yet (rhythm object, melody) survive a save.
+enum JSONValue: Codable, Equatable {
+    case null, bool(Bool), num(Double), str(String), arr([JSONValue]), obj([String: JSONValue])
+    init(from d: Decoder) throws {
+        let c = try d.singleValueContainer()
+        if c.decodeNil() { self = .null }
+        else if let b = try? c.decode(Bool.self) { self = .bool(b) }
+        else if let n = try? c.decode(Double.self) { self = .num(n) }
+        else if let s = try? c.decode(String.self) { self = .str(s) }
+        else if let a = try? c.decode([JSONValue].self) { self = .arr(a) }
+        else { self = .obj(try c.decode([String: JSONValue].self)) }
+    }
+    func encode(to e: Encoder) throws {
+        var c = e.singleValueContainer()
+        switch self {
+        case .null: try c.encodeNil()
+        case .bool(let b): try c.encode(b)
+        case .num(let n): if n == n.rounded() && abs(n) < 1e15 { try c.encode(Int(n)) } else { try c.encode(n) }
+        case .str(let s): try c.encode(s)
+        case .arr(let a): try c.encode(a)
+        case .obj(let o): try c.encode(o)
+        }
+    }
+}
+
 struct ChordMark: Codable, Equatable, Identifiable {
     var id = UUID()
     var at_char: Int
@@ -96,6 +121,8 @@ struct Song: Codable, Equatable, Identifiable {
     var key = ""
     var tempo = ""
     var rhythm = ""
+    var rhythmObject: JSONValue? = nil   // newer schema: rhythm as an object, kept as is
+    var melody: JSONValue? = nil         // newer schema: melody staff data, kept as is
     var scale: String? = nil
     var confidence = ""
     var chord_source = "audio"
@@ -109,7 +136,7 @@ struct Song: Codable, Equatable, Identifiable {
     var fileName: String? = nil       // not stored in the JSON
 
     enum CodingKeys: String, CodingKey {
-        case schema, number, slug, title, subtitle, language, key, tempo, rhythm, scale, confidence, chord_source
+        case schema, number, slug, title, subtitle, language, key, tempo, rhythm, melody, scale, confidence, chord_source
         case play, sections, arrangement, notes, evidence, uncertain, sources
     }
     init() {}
@@ -118,7 +145,13 @@ struct Song: Codable, Equatable, Identifiable {
         func s(_ k: CodingKeys) throws -> String { try c.decodeIfPresent(String.self, forKey: k) ?? "" }
         schema = try c.decodeIfPresent(String.self, forKey: .schema) ?? "ethno-song/1"
         number = try s(.number); slug = try s(.slug); title = try s(.title); subtitle = try s(.subtitle)
-        language = try s(.language); key = try s(.key); tempo = try s(.tempo); rhythm = try s(.rhythm)
+        language = try s(.language); key = try s(.key); tempo = try s(.tempo)
+        if let r = try? c.decodeIfPresent(String.self, forKey: .rhythm) { rhythm = r }
+        else if let o = try? c.decodeIfPresent(JSONValue.self, forKey: .rhythm) {
+            rhythmObject = o
+            if case .obj(let d) = o, case .str(let n)? = d["name"] { rhythm = n }
+        }
+        melody = try? c.decodeIfPresent(JSONValue.self, forKey: .melody)
         scale = try c.decodeIfPresent(String.self, forKey: .scale)
         confidence = try s(.confidence)
         chord_source = try c.decodeIfPresent(String.self, forKey: .chord_source) ?? "audio"
@@ -134,7 +167,8 @@ struct Song: Codable, Equatable, Identifiable {
         var c = e.container(keyedBy: CodingKeys.self)
         try c.encode(schema, forKey: .schema); try c.encode(number, forKey: .number); try c.encode(slug, forKey: .slug)
         try c.encode(title, forKey: .title); try c.encode(subtitle, forKey: .subtitle); try c.encode(language, forKey: .language)
-        try c.encode(key, forKey: .key); try c.encode(tempo, forKey: .tempo); try c.encode(rhythm, forKey: .rhythm)
+        try c.encode(key, forKey: .key); try c.encode(tempo, forKey: .tempo); if let o = rhythmObject { try c.encode(o, forKey: .rhythm) } else { try c.encode(rhythm, forKey: .rhythm) }
+        try c.encodeIfPresent(melody, forKey: .melody)
         try c.encodeIfPresent(scale, forKey: .scale)
         try c.encode(confidence, forKey: .confidence); try c.encode(chord_source, forKey: .chord_source)
         try c.encode(play, forKey: .play); try c.encode(sections, forKey: .sections)
